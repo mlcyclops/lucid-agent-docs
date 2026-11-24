@@ -1,0 +1,114 @@
+---
+title: Choose a model
+description: Pick which AI model answers you with the model button, and use its Login row to sign in or log in again.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+A model is one specific AI that answers you, such as one version of Claude. Each [model provider](/glossary/#model-provider) you connect adds its models to LUCID. The model button at the top of the window shows the model in use, and lets you pick another.
+
+## Pick a model
+
+<Steps>
+
+1. Click the model button at the top of the window. It shows the name of the current model.
+
+   A list opens. **Model** at the top names the model in use.
+
+   <Shot
+     id="connect-picker-models"
+     alt="The model list open under the model button. Under Model are a Login button, a search box, and a list of Claude models with the current one ticked. Each row shows a context size and one to five stars."
+     callouts={[
+       { box: "pill", label: "The model button." },
+       { box: "login", label: "The Login row. See below." },
+       { box: "search", label: "Search: type part of a model's name." },
+       { box: "current", label: "The model in use has a tick." },
+       { box: "row", label: "Click any row to switch to that model." },
+     ]}
+   />
+
+2. Find the model you want. Models are grouped by family. Type part of a name in the search box to filter the list.
+
+   Each row shows the model's context window, which is how much text it can keep in mind at once, and one to five stars for how capable it is.
+
+3. Click the model. The list closes and the model button shows the new name.
+
+   <Shot
+     id="connect-model-chosen"
+     alt="The top left of the window. The model button now reads Claude Sonnet 4.6."
+     callouts={[{ box: "pill", label: "The model button shows the model you picked." }]}
+   />
+
+</Steps>
+
+<Aside type="tip">
+To keep a model at the top of the list, hover its row and click the star at the end. It moves to a **Favorites** group. Click the star again to remove it.
+</Aside>
+
+No models in the list? Nothing is connected yet. The list says **No models yet. Connect a provider, then Refresh.** Follow [Connect your AI](/connect/) first.
+
+## Mode and thinking
+
+Under the model list are two more settings:
+
+- **Mode:** **Agent** edits files and runs tools on its own. **Ask** asks you to approve each tool call before it runs. **Plan** only reads and drafts a plan, and makes no changes. See [approval](/glossary/#approval).
+- **Thinking:** how hard the model thinks before it answers, from **Off** (fastest) to **X-High** (deepest). **Auto** lets the model choose.
+
+## The Login row
+
+Under the model name is a **Login** button. It lists every provider you can sign in to with a subscription, and shows each one's state:
+
+- **Login:** not signed in yet. Click it to sign in. See [Sign in with a subscription](/connect/sign-in-with-a-subscription/).
+- **Signed in:** this provider is connected.
+- **Log in again:** this sign-in ended. Click it to sign in again.
+
+<Steps>
+
+1. Click the model button.
+
+2. Click **Login**. The list of providers opens. When nothing is connected yet, it is already open.
+
+   <Shot
+     id="connect-picker-login"
+     alt="The model list on a new install. Under Model, the Login list shows ChatGPT, Gemini, Claude, Grok and Copilot, each with a Login button. Below, the model list says No models yet, and at the bottom is Add or manage providers."
+     callouts={[
+       { box: "pill", label: "The model button." },
+       { box: "login", label: "Login opens or closes the list of providers." },
+       { box: "list", label: "Each provider you can sign in to, with a Login button." },
+       { box: "empty", label: "With nothing connected, there are no models yet." },
+       { box: "add", label: "Add or manage providers opens the Provider Hub, for API keys and every provider." },
+     ]}
+   />
+
+3. Click **Login** next to your provider. Most providers open their sign-in page in your web browser. For Grok and GitHub Copilot, LUCID opens the provider's tile in the Provider Hub instead, where you finish the steps. See [Sign in with a subscription](/connect/sign-in-with-a-subscription/#differences-by-provider).
+
+</Steps>
+
+After you sign in to a provider, its row says **Signed in**.
+
+<Shot
+  id="connect-picker-login-signed-in"
+  alt="The Login list with Claude marked Signed in and the other providers still showing a Login button."
+  callouts={[
+    { box: "toggle", label: "Login." },
+    { box: "signedin", label: "Signed in: this provider is connected." },
+    { box: "login", label: "Login: not signed in yet." },
+  ]}
+/>
+
+## When a sign-in ends
+
+A provider can end a saved sign-in, for example after an update. LUCID then tells you:
+
+- The dot on the model button turns amber.
+- A notice under the model button says, for example, **Log in to Claude again**. Click **Log in** to sign in again, or **Not now** to hide the notice until LUCID next opens.
+- At the top of the Login row, an amber **Log in to Claude again** button appears.
+
+When you log in again, LUCID puts you back on the model you used before the sign-in ended, if that model is still offered.
+
+## Next step
+
+<LinkCard title="Connect your email and calendar" href="/connect/email-and-calendar/" description="Let your agents work with your mail and calendar." />

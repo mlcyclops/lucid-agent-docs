@@ -1,0 +1,73 @@
+name: Docs
+
+# Pull requests build, check and deploy to a Firebase Hosting preview channel; a merge to main deploys
+# docs.lucid-agents.com. Keyless: GitHub OIDC through the `github-docs` Workload Identity provider, which admits only
+# this repository, impersonating a service account that holds Firebase Hosting Admin and nothing else.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  WIF_PROVIDER: projects/852163018322/locations/global/workloadIdentityPools/github/providers/github-docs
+  DEPLOY_SA: docs-hosting-deployer@lucid-agent.iam.gserviceaccount.com
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # lastUpdated reads git history
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Build, then check alt text, captions, em dashes, sitemap and shots
+        run: bun run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docs-site
+          path: dist
+          retention-days: 14
+
+  deploy:
+    needs: build
+    # Fork pull requests get no OIDC token for this repo; they build and check only.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: docs-site
+          path: dist
+      - uses: google-github-actions/auth@v2
+        with:
+          project_id: lucid-agent
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: ${{ env.DEPLOY_SA }}
+      - name: Deploy a preview channel
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          out=$(npx --yes firebase-tools@latest hosting:channel:deploy "pr-${{ github.event.pull_request.number }}" --only docs --expires 7d --json)
+          url=$(echo "$out" | jq -r '.result | to_entries[0].value.url')
+          echo "Preview: $url" >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "${{ github.event.pull_request.number }}" --edit-last --body "Docs preview: $url (expires in 7 days)" \
+            || gh pr comment "${{ github.event.pull_request.number }}" --body "Docs preview: $url (expires in 7 days)"
+      - name: Deploy live
+        if: github.event_name != 'pull_request'
+        run: npx --yes firebase-tools@latest deploy --only hosting:docs --non-interactive

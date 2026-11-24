@@ -1,0 +1,87 @@
+---
+title: Install on a Mac
+description: Find out which Mac chip you have, install LUCID with Homebrew or the installer package, and open it.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, Tabs, TabItem } from "@astrojs/starlight/components";
+
+LUCID for Mac comes in two versions, one for each kind of Mac chip. First find out which chip your Mac has, then pick one of two ways to install.
+
+## Check your Mac's chip
+
+<Steps>
+
+1. Click the Apple menu in the top-left corner of the screen.
+
+2. Choose **About This Mac**.
+
+3. Look at the line called **Chip** or **Processor**.
+   - It names an Apple chip, such as Apple M1, M2, M3 or M4: you have **Apple silicon**.
+   - It names an Intel processor: you have an **Intel** Mac.
+
+</Steps>
+
+## Install LUCID
+
+There are two ways. Homebrew is the easiest if you already use it, because it installs and updates LUCID with no security prompt. Homebrew is a free tool that installs apps when you type commands in the Terminal app. If you have never used it, use the installer package instead.
+
+<Tabs>
+<TabItem label="Installer package">
+
+<Steps>
+
+1. Open the latest release page: [github.com/mlcyclops/lucidagentide/releases/latest](https://github.com/mlcyclops/lucidagentide/releases/latest).
+
+2. Scroll down to **Assets** and download the file for your chip:
+   - Apple silicon: **LucidAgent-mac-arm64.pkg**
+   - Intel: **LucidAgent-mac-x64.pkg**
+
+3. Open the downloaded file and follow the installer to the end. It puts LUCID in your **Applications** folder.
+
+4. If macOS will not open the file the first time, Control-click (or right-click) it in Finder and choose **Open**. Then confirm.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Homebrew">
+
+<Steps>
+
+1. Open the **Terminal** app.
+
+2. Paste these three lines, one at a time, and press **Return** after each:
+
+   ```bash
+   brew tap mlcyclops/lucid https://github.com/mlcyclops/lucidagentide
+   brew trust --cask mlcyclops/lucid/lucidagentide
+   brew install --cask lucidagentide
+   ```
+
+3. Wait for Homebrew to finish. It picks the right version for your chip and copies LUCID into your **Applications** folder.
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+<Aside title="Other Mac files on the release page">
+You may also see **LucidAgent-mac-arm64.zip** and **LucidAgent-mac-x64.zip**. Each holds the app itself: open it and drag **LucidAgentIDE** into **Applications**. Homebrew uses these files. You do not need them if you used the installer package.
+</Aside>
+
+## Open LUCID
+
+<Steps>
+
+1. Open **Finder** and go to **Applications**.
+
+2. Double-click **LucidAgentIDE**. You can also press **Command** and **Space**, type `Lucid`, and press **Return**.
+
+3. If macOS will not open it the first time, Control-click (or right-click) the app and choose **Open**. You only need to do this once.
+
+4. The very first time, LUCID may show a short **Setting up LucidAgentIDE** screen while it gets ready. Wait for it to finish.
+
+</Steps>
+
+Next: [your first launch](/get-started/first-launch/).

@@ -1,0 +1,54 @@
+---
+title: Glossary
+description: Plain-language meanings of the words these pages use, from API to World Pack.
+---
+
+The words these pages use, in plain language.
+
+## API
+
+An API, short for application programming interface, is a doorway one program uses to talk to another. When you send a message, LUCID passes it to your model provider's AI through the provider's API. You never use the API yourself; LUCID does it for you.
+
+## API key
+
+An API key is a long secret code that a model provider gives you, so programs such as LUCID can use its AI on your account. You paste it into LUCID once, and LUCID keeps it in your operating system's encrypted vault when your computer has one. Use through a key is billed by the provider, separately from any monthly subscription. Treat a key like a password. See [Use an API key](/connect/use-an-api-key/).
+
+## Model provider
+
+A model provider is a company that runs AI models, such as Anthropic (Claude), OpenAI (ChatGPT), Google (Gemini), xAI (Grok) or GitHub (Copilot). LUCID has no AI of its own, so it needs at least one connected provider before you can chat. You connect providers in the Provider Hub, by subscription sign-in or with an API key. See [Connect your AI](/connect/).
+
+## Subscription sign-in
+
+Subscription sign-in connects an AI plan you already pay for, without an API key. You log in on the provider's own page and approve LUCID there; this method is called OAuth. LUCID never sees your password: it gets a token you can take back at any time. Your plan's allowance is set by the provider, not by LUCID. See [Sign in with a subscription](/connect/sign-in-with-a-subscription/).
+
+## Agent
+
+An agent is an AI that can take actions, not only answer. It can read and edit files, run commands and use connected tools to finish a task. In LUCID, the agent in your chat is one, and you can run more side by side. Every action an agent takes passes LUCID's security gate first.
+
+## Fleet
+
+The Fleet is a group of agents working at the same time, each on its own task, with its own conversation and message box. You open it with the Fleet button, the lightning bolt in the message box's tools. It shows your agents around the main chat, which LUCID calls the hub.
+
+## Approval
+
+An approval is your yes or no before an agent does something. When **Mode** is set to **Ask**, LUCID asks you to approve each tool call before it runs. LUCID also asks before an agent visits a website. A request left unanswered when the agent's turn ends counts as a no.
+
+## Sandbox
+
+A sandbox is a walled-off space where a program can reach only what it is given. LUCID can run the agent inside one, so the agent reaches only the folders you allow; the Security panel shows whether it is on. Pages in the Preview panel and plugins also run in their own sandboxes.
+
+## Quarantine
+
+When LUCID's security gate blocks a tool call it judges unsafe, the call is quarantined: held back, not run, and recorded with the reason. LUCID shows a **Tool call quarantined** notice, and the Security panel lists the blocked call. There you can dismiss it, which keeps it blocked, or click **Approve & retry** if you are sure it was a false alarm.
+
+## MCP
+
+MCP, short for Model Context Protocol, is a standard way to connect an AI agent to another app or service, such as your email or calendar. Each service connected this way is an MCP server. You add them in Settings, under **Connectors**. What a server sends back is still checked by LUCID's security gate. See [Connect your email and calendar](/connect/email-and-calendar/).
+
+## Repository
+
+A repository is a project folder whose history is kept by git, a tool that saves each change as a step you can review or undo. LUCID works in a folder on your computer, and that folder is often a repository. When it is, a button at the top of the window shows the repository a session works on and where its saved changes go.
+
+## World Pack
+
+A World Pack is a bundle in the LUCID store that unlocks several Lucid Agent Worlds on your account. A world turns the Visualize view into a themed scene where your agents appear as characters. The pack itself installs nothing: the worlds it unlocks show **Install** on their cards, and you install them from **Preview > Plugins > Premium**.

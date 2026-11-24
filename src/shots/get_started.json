@@ -1,0 +1,302 @@
+{
+  "module": "get_started",
+  "capturedAt": "2026-11-24T14:24:06.887Z",
+  "shots": {
+    "get-started-first-launch-window": {
+      "file": "get-started-first-launch-window.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "role": [
+          360,
+          142,
+          720,
+          617
+        ],
+        "personalize": [
+          1082,
+          52,
+          340,
+          182
+        ]
+      },
+      "step": "Shoots the whole window on a fresh install: the role picker over the app."
+    },
+    "get-started-role-picker": {
+      "file": "get-started-role-picker.webp",
+      "width": 744,
+      "height": 641,
+      "boxes": {
+        "developer": [
+          35,
+          198,
+          330,
+          121
+        ],
+        "security": [
+          379,
+          198,
+          330,
+          121
+        ],
+        "manager": [
+          35,
+          333,
+          330,
+          121
+        ],
+        "executive": [
+          379,
+          333,
+          330,
+          121
+        ],
+        "lucid-agent": [
+          35,
+          467,
+          674,
+          100
+        ],
+        "skip": [
+          301,
+          581,
+          142,
+          29
+        ]
+      },
+      "step": "Shoots the role picker with its five role cards and the Skip button."
+    },
+    "get-started-work-email": {
+      "file": "get-started-work-email.webp",
+      "width": 464,
+      "height": 328,
+      "boxes": {
+        "email": [
+          35,
+          219,
+          394,
+          35
+        ],
+        "skip": [
+          120,
+          268,
+          140,
+          29
+        ],
+        "save": [
+          269,
+          268,
+          75,
+          29
+        ]
+      },
+      "step": "Shoots the optional work email prompt, then skips it."
+    },
+    "get-started-cui-question": {
+      "file": "get-started-cui-question.webp",
+      "width": 744,
+      "height": 456,
+      "boxes": {
+        "yes": [
+          35,
+          263,
+          674,
+          74
+        ],
+        "no": [
+          35,
+          346,
+          674,
+          74
+        ]
+      },
+      "step": "Shoots the Government CUI question, then answers No - standard use."
+    },
+    "get-started-connect-provider": {
+      "file": "get-started-connect-provider.webp",
+      "width": 744,
+      "height": 412,
+      "boxes": {
+        "connect": [
+          35,
+          218,
+          674,
+          74
+        ],
+        "later": [
+          35,
+          301,
+          674,
+          74
+        ]
+      },
+      "step": "Shoots the Connect an AI provider prompt (shown when no provider is set up), then chooses I'll do it later."
+    },
+    "get-started-tour": {
+      "file": "get-started-tour.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "card": [
+          47,
+          701,
+          300,
+          194
+        ],
+        "next": [
+          279,
+          814,
+          52,
+          31
+        ],
+        "skip": [
+          287,
+          863,
+          44,
+          17
+        ]
+      },
+      "step": "Shoots the first card of the guided tour over the whole window once the earlier notices have faded, then skips the tour."
+    },
+    "get-started-personalize": {
+      "file": "get-started-personalize.webp",
+      "width": 364,
+      "height": 207,
+      "boxes": {
+        "setup": [
+          55,
+          156,
+          134,
+          25
+        ],
+        "later": [
+          196,
+          156,
+          44,
+          25
+        ]
+      },
+      "step": "Shoots the Make LucidAgent yours card once the other notices have faded, then chooses Later."
+    },
+    "get-started-main-window": {
+      "file": "get-started-main-window.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "rail": [
+          0,
+          43,
+          58,
+          824
+        ],
+        "sidebar": [
+          58,
+          43,
+          255,
+          824
+        ],
+        "newSession": [
+          232,
+          110,
+          26,
+          26
+        ],
+        "model": [
+          113,
+          6,
+          160,
+          31
+        ],
+        "composer": [
+          341,
+          751,
+          965,
+          59
+        ],
+        "inspector": [
+          1334,
+          43,
+          106,
+          824
+        ],
+        "status": [
+          0,
+          868,
+          1440,
+          32
+        ],
+        "settings": [
+          7,
+          814,
+          43,
+          43
+        ],
+        "about": [
+          7,
+          719,
+          43,
+          43
+        ]
+      },
+      "step": "Shoots the whole main window after the first-run prompts, with its parts named."
+    },
+    "get-started-change-role": {
+      "file": "get-started-change-role.webp",
+      "width": 1100,
+      "height": 760,
+      "boxes": {
+        "category": [
+          9,
+          100,
+          215,
+          30
+        ],
+        "profile": [
+          248,
+          168,
+          836,
+          44
+        ],
+        "roles": [
+          262,
+          381,
+          808,
+          30
+        ],
+        "stage": [
+          262,
+          428,
+          808,
+          41
+        ],
+        "tour": [
+          576,
+          493,
+          66,
+          18
+        ]
+      },
+      "step": "Opens Settings > Workspace & profile, expands Profile and shoots the Role row."
+    },
+    "get-started-about": {
+      "file": "get-started-about.webp",
+      "width": 564,
+      "height": 678,
+      "boxes": {
+        "version": [
+          244,
+          166,
+          66,
+          22
+        ],
+        "tour": [
+          165,
+          612,
+          140,
+          31
+        ]
+      },
+      "step": "Opens About from the left rail and shoots the version."
+    }
+  }
+}

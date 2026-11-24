@@ -1,0 +1,17 @@
+{
+  "name": "lucid-agent-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro build && bun scripts/check-dist.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.43.1",
+    "astro": "^7.4.13",
+    "sharp": "^0.35.5",
+    "starlight-links-validator": "^0.27.0"
+  }
+}

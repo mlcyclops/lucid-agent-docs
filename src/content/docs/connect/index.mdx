@@ -1,0 +1,87 @@
+---
+title: Connect your AI
+description: Learn the two ways to connect an AI to LUCID, find out which one you have, and where to start.
+sidebar:
+  order: 0
+---
+
+import { Steps, Aside, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+LUCID does not come with its own AI. It uses the AI of a [model provider](/glossary/#model-provider): a company that runs AI models, such as Anthropic (Claude), OpenAI (ChatGPT), Google (Gemini), xAI (Grok) or GitHub (Copilot). LUCID needs at least one connected provider before you can chat.
+
+There are two ways to connect one.
+
+## Two ways to connect
+
+**Sign in with a subscription.** You sign in with an account you already pay for, on the provider's own page, and approve LUCID there. This is called [subscription sign-in](/glossary/#subscription-sign-in). LUCID never sees your password, and you do not need a key. Your plan's allowance is set by the provider, and LUCID cannot raise or reset it.
+
+**Paste an API key.** An [API key](/glossary/#api-key) is a long secret code that a provider gives you so programs can use its AI on your account. You paste it into LUCID once. Use through a key is billed separately from any subscription, usually by how much you use.
+
+You can use both, and you can connect more than one provider.
+
+## How to tell which one you have
+
+- **You pay a monthly plan for Claude, ChatGPT, Gemini, Grok or GitHub Copilot and log in with your account:** you have a subscription. Follow [Sign in with a subscription](/connect/sign-in-with-a-subscription/).
+- **You, or your company, created a key on a provider's website and saved a long code:** you have an API key. Follow [Use an API key](/connect/use-an-api-key/).
+- **Your company uses Azure OpenAI, Amazon Bedrock or Gemini Enterprise:** these have no subscription sign-in in LUCID. Ask your administrator for the key or settings, then follow [Use an API key](/connect/use-an-api-key/).
+- **You have neither yet:** open LUCID's guided setup. It explains what each provider costs, which free tiers exist, and which plan fits your work. To find it, follow the first two steps below, then click **Guided setup: choose a provider**.
+
+## Where to start
+
+You can start connecting from three places. All three open the same window, the **Provider Hub**.
+
+When nothing is connected yet, LUCID asks **Connect an AI provider** each time it opens.
+
+<Shot
+  id="connect-first-run"
+  alt="A box titled Connect an AI provider that says LUCID needs at least one model provider to chat, with two choices: Connect a provider, and I'll do it later."
+  callouts={[
+    { box: "connect", label: "Connect a provider opens the Provider Hub." },
+    { box: "later", label: "I'll do it later closes the box. You can connect from the model button or Settings any time." },
+  ]}
+/>
+
+At any time, use the model button at the top of the window. It shows the name of the current model.
+
+<Shot
+  id="connect-window"
+  alt="The LUCID main window. The model button is at the top left next to the LUCID name, and the Settings icon is at the bottom of the icon bar on the left."
+  callouts={[
+    { box: "pill", label: "The model button. Click it, then click Add or manage providers." },
+    { box: "settings", label: "Settings. Under Models & providers, the Providers card has an Open the Provider Hub button." },
+  ]}
+/>
+
+<Steps>
+
+1. Click the model button at the top of the window.
+
+2. At the bottom of the list that opens, click **Add or manage providers**.
+
+   The Provider Hub opens. Its title is **Connect a provider**. It lists every provider as a tile: **SIGN IN / KEY** means you can sign in or paste a key, and **ADD KEY** means key only.
+
+   <Shot
+     id="connect-hub"
+     alt="The Provider Hub window titled Connect a provider, with the guided setup button near the top and the list of providers below."
+     callouts={[
+       { box: "title", label: "Connect a provider: sign in with a subscription or paste an API key." },
+       { box: "guide", label: "Guided setup: choose a provider, for help picking one." },
+       { box: "close", label: "Close the hub." },
+     ]}
+   />
+
+</Steps>
+
+<Aside type="tip">
+You can also press **Ctrl+K** (Windows and Linux) or **⌘K** (Mac) to open the command list, then choose **Connect a provider…**.
+</Aside>
+
+## Next steps
+
+<CardGrid>
+  <LinkCard title="Sign in with a subscription" href="/connect/sign-in-with-a-subscription/" description="Use the Claude, ChatGPT, Gemini, Grok or Copilot plan you already pay for." />
+  <LinkCard title="Use an API key" href="/connect/use-an-api-key/" description="Paste a key from your provider, and see where LUCID keeps it." />
+  <LinkCard title="Choose a model" href="/connect/choose-a-model/" description="Pick which AI answers you, and log in again when a sign-in ends." />
+  <LinkCard title="Connect your email and calendar" href="/connect/email-and-calendar/" description="Add your mail or calendar service with Quick connect." />
+</CardGrid>

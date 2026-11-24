@@ -1,0 +1,115 @@
+---
+title: Sign in with a subscription
+description: Connect the Claude, ChatGPT, Gemini, Grok or GitHub Copilot plan you already pay for, without an API key.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+If you already pay for an AI plan, you can sign in with it. This is [subscription sign-in](/glossary/#subscription-sign-in): you log in on the provider's own web page and approve LUCID there. LUCID never sees your password. It gets a token, a kind of pass, that you can take back at any time. You do not need an [API key](/glossary/#api-key).
+
+Subscription sign-in works with these [model providers](/glossary/#model-provider): ChatGPT, Gemini, Claude, Grok and GitHub Copilot.
+
+This page signs in to Claude. The other providers work the same way, with the small differences listed at the end.
+
+## Sign in
+
+<Steps>
+
+1. Click the model button at the top of the window. It shows the name of the current model.
+
+2. Under **Model**, find the **Login** list. Each provider you can sign in to has a **Login** button. When nothing is connected yet, the list is already open. If it is closed, click **Login** to open it.
+
+   <Shot
+     id="connect-picker-login"
+     alt="The list under the model button on a new install. Under Model, the Login list shows ChatGPT, Gemini, Claude, Grok and Copilot, each with a Login button."
+     callouts={[
+       { box: "pill", label: "The model button." },
+       { box: "login", label: "Login opens or closes the list of providers." },
+       { box: "list", label: "Click Login next to your provider." },
+       { box: "empty", label: "With nothing connected, there are no models yet." },
+       { box: "add", label: "Add or manage providers opens the Provider Hub, another way to sign in." },
+     ]}
+   />
+
+3. Click **Login** next to **Claude**.
+
+4. Your web browser opens Claude's sign-in page. Sign in with your account and approve LUCID.
+
+   LUCID shows **Finish signing in in your browser** while it waits.
+
+   <Shot
+     id="connect-signin-browser"
+     alt="A notice titled Finish signing in in your browser, with Open sign-in page and Copy URL buttons."
+     callouts={[
+       { box: "open", label: "No page opened? Click Open sign-in page." },
+       { box: "copy", label: "Or click Copy URL and paste the address into your browser yourself." },
+     ]}
+   />
+
+5. Go back to LUCID. When the sign-in finishes, LUCID says **Connected - models updated**, and Claude's models appear in the model list.
+
+   <Shot
+     id="connect-signin-done"
+     alt="A notice titled Connected - models updated, saying Anthropic · Claude is ready in the model picker."
+   />
+
+</Steps>
+
+In the **Login** list, Claude now says **Signed in**. To pick one of its models, see [Choose a model](/connect/choose-a-model/).
+
+<Aside>
+A subscription is not unlimited. Your plan has an allowance for this kind of use, and long or parallel jobs can use it up quickly. The provider sets the allowance, and LUCID cannot raise or reset it. Check your usage on the provider's website before a large job.
+</Aside>
+
+## Sign in from the Provider Hub
+
+The Provider Hub lists every provider, with its sign-in and key settings in one place.
+
+<Steps>
+
+1. Click the model button, then click **Add or manage providers** at the bottom of the list.
+
+2. Click your provider's tile, for example **Anthropic · Claude**. A tile you have not set up yet says **SIGN IN / KEY**.
+
+3. Click **Connect via OAuth**. OAuth is the name of this sign-in method. Then finish in your browser, as in steps 4 and 5 above.
+
+   <Shot
+     id="connect-hub-claude"
+     alt="The Provider Hub with the Anthropic · Claude tile open. It shows a Connect via OAuth button and, below it, a box for an API key."
+     callouts={[
+       { box: "oauth", label: "Connect via OAuth signs in with your subscription." },
+       { box: "key", label: "This box is for an API key instead. Leave it empty when you sign in." },
+     ]}
+   />
+
+</Steps>
+
+After you sign in, the tile says **CONNECTED**. Inside the tile, your account name and a **Disconnect** button take the place of **Connect via OAuth**.
+
+## Differences by provider
+
+- **ChatGPT:** if the browser sign-in never comes back to LUCID, open the **OpenAI · ChatGPT** tile in the Provider Hub and click **Connect with a device code**. LUCID shows a short code. Type it on OpenAI's device page, then approve the sign-in.
+- **Gemini:** if you sign in with a work or school Google account, first open the **Google · Gemini** tile in the Provider Hub, fill in **GCP project ID (Workspace / Enterprise OAuth)** and click **Save**. Without it the sign-in stops. Personal Google accounts leave it empty.
+- **Grok:** **Login** opens the **xAI · Grok** tile in the Provider Hub. Click **Connect via OAuth** and sign in. The page then shows a code. Paste it into the box that says **Paste device code here…**, then click **Submit**.
+- **GitHub Copilot:** **Login** opens the **GitHub · Copilot** tile in the Provider Hub. Click **Connect via OAuth**. A box asks for a **GitHub Enterprise domain**: leave it empty for github.com, then click **Start Copilot sign-in**. Type the one-time code on GitHub's page.
+
+## Sign out
+
+<Steps>
+
+1. Open the Provider Hub: click the model button, then **Add or manage providers**.
+
+2. Click your provider's tile.
+
+3. Click **Disconnect**.
+
+</Steps>
+
+To remove every saved sign-in at once, open **Settings**, click **Models & providers**, open **Providers**, and click **Sign out of all providers**. Your API keys are kept.
+
+## Next step
+
+<LinkCard title="Choose a model" href="/connect/choose-a-model/" description="Pick which of your provider's models answers you." />

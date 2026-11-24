@@ -1,0 +1,84 @@
+---
+title: Keep LUCID up to date
+description: How LUCID updates itself, how to check which version you have, and how to update on a Mac or Linux.
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside, Tabs, TabItem } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+Updating LUCID keeps your settings, your sessions and your keys. How you update depends on how you installed it.
+
+## Check which version you have
+
+<Steps>
+
+1. In the narrow bar of icons on the left edge of LUCID, click the book icon near the bottom. It opens **About**.
+
+2. Read the version number under the LUCID name, for example **v2.7.1**.
+
+3. Click **Close**.
+
+</Steps>
+
+<Shot
+  id="get-started-about"
+  alt="The About LUCID window. Under the large LUCID logo is the version number v2.7.1, and at the bottom are the Take the tour and Close buttons."
+  callouts={[
+    { box: "version", label: "The version you have installed." },
+    { box: "tour", label: "Take the tour replays the short guided tour from your first launch." },
+  ]}
+/>
+
+To see the newest version, open the [latest release page](https://github.com/mlcyclops/lucidagentide/releases/latest). Its title shows the version number.
+
+## Update LUCID
+
+<Tabs>
+<TabItem label="Windows">
+
+If you installed LUCID with **LucidAgent-Setup.exe**, it updates itself:
+
+<Steps>
+
+1. Each time you open LUCID, it checks for a new version. If one exists, it downloads it in the background while you keep working.
+
+2. When the download is ready, LUCID shows a box titled **Update ready**.
+
+3. Click **Restart now** to install it. LUCID closes and installs the update. Click **Later** to keep working: LUCID offers the update again the next time you open it.
+
+</Steps>
+
+If you have [agents](/glossary/#agent) running in the background, the **Update ready** box lists them first. An agent is an AI helper that works on a task for you. The restart button then says what happens to them, for example **Restart and keep every agent**, or **Stop 2 idle or stuck agents and restart**. If an agent is still working in a way the update would disturb, or LUCID cannot tell which agents are running, the box offers only **Later**, so the update never installs over an agent that is still working.
+
+If you use **LucidAgent-portable.exe**, download the newest `LucidAgent-portable.exe` from the [latest release page](https://github.com/mlcyclops/lucidagentide/releases/latest) and use it in place of the old one.
+
+</TabItem>
+<TabItem label="Mac">
+
+If you installed LUCID with Homebrew, open the **Terminal** app and type:
+
+```bash
+brew upgrade --cask lucidagentide
+```
+
+Homebrew replaces the app with the newest version. Your data stays where it is.
+
+If you installed LUCID with the `.pkg` file, download the newest `.pkg` for your chip from the [latest release page](https://github.com/mlcyclops/lucidagentide/releases/latest) and run it again, as in [Install on a Mac](/get-started/install-macos/). It replaces the old version.
+
+</TabItem>
+<TabItem label="Linux">
+
+Download the newest file from the [latest release page](https://github.com/mlcyclops/lucidagentide/releases/latest) and install it over the old one, the same way you did the first time. See [Install on Linux](/get-started/install-linux/).
+
+- **AppImage:** replace the old `.AppImage` file with the new one, then run `chmod +x` on it again.
+- **.deb:** `sudo apt install ./lucidagentide-desktop_<version>_amd64.deb`
+- **.rpm:** `sudo dnf install ./lucidagentide-desktop-<version>.x86_64.rpm`
+
+</TabItem>
+</Tabs>
+
+<Aside>
+If your company manages LUCID for you, your IT team may turn off the update check inside LUCID. They install new versions for you instead.
+</Aside>

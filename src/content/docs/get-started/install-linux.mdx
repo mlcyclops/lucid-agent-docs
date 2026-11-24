@@ -1,0 +1,108 @@
+---
+title: Install on Linux
+description: Pick the right LUCID file for your Linux computer, install it, and open LUCID.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, Tabs, TabItem } from "@astrojs/starlight/components";
+
+LUCID for Linux comes as an AppImage, which runs on most Linux systems without installing, or as a package for Debian, Ubuntu, Fedora and similar systems.
+
+## Check your processor
+
+Open a terminal and type:
+
+```bash
+uname -m
+```
+
+- `x86_64` means a regular 64-bit Intel or AMD processor. Every Linux file below works for you.
+- `aarch64` means an ARM processor. Use **LucidAgent-arm64.AppImage**. The `.deb` and `.rpm` packages are not built for ARM.
+
+## Which file to download
+
+| File | Pick it when |
+| :-- | :-- |
+| `LucidAgent-x86_64.AppImage` | You want the simplest option on an x86_64 computer. It runs on most Linux systems. |
+| `LucidAgent-arm64.AppImage` | Your computer has an ARM processor. |
+| `lucidagentide-desktop_2.7.1_amd64.deb` | You use Debian, Ubuntu or another system that installs `.deb` packages. |
+| `lucidagentide-desktop-2.7.1.x86_64.rpm` | You use Fedora, Red Hat or another system that installs `.rpm` packages. |
+
+The `.deb` and `.rpm` names include the version number, so they change with each release. The pattern is `lucidagentide-desktop_<version>_amd64.deb` and `lucidagentide-desktop-<version>.x86_64.rpm`.
+
+## Install and open LUCID
+
+<Tabs>
+<TabItem label="AppImage">
+
+<Steps>
+
+1. Open the latest release page: [github.com/mlcyclops/lucidagentide/releases/latest](https://github.com/mlcyclops/lucidagentide/releases/latest).
+
+2. Scroll down to **Assets** and download **LucidAgent-x86_64.AppImage**, or **LucidAgent-arm64.AppImage** on an ARM computer.
+
+3. Open a terminal in the folder where the file was saved, usually `~/Downloads`, and allow the file to run:
+
+   ```bash
+   chmod +x LucidAgent-x86_64.AppImage
+   ```
+
+   On ARM, use `LucidAgent-arm64.AppImage` in this command and the next one.
+
+4. Start LUCID:
+
+   ```bash
+   ./LucidAgent-x86_64.AppImage
+   ```
+
+   After the first time, you can also double-click the file in your file manager.
+
+</Steps>
+
+</TabItem>
+<TabItem label=".deb (Debian, Ubuntu)">
+
+<Steps>
+
+1. Open the latest release page: [github.com/mlcyclops/lucidagentide/releases/latest](https://github.com/mlcyclops/lucidagentide/releases/latest).
+
+2. Scroll down to **Assets** and download the file that ends in `_amd64.deb`.
+
+3. Open a terminal in the folder where the file was saved and install it. Replace the version with the one you downloaded:
+
+   ```bash
+   sudo apt install ./lucidagentide-desktop_2.7.1_amd64.deb
+   ```
+
+4. Open your applications menu and click **Lucid Agent**.
+
+</Steps>
+
+</TabItem>
+<TabItem label=".rpm (Fedora, Red Hat)">
+
+<Steps>
+
+1. Open the latest release page: [github.com/mlcyclops/lucidagentide/releases/latest](https://github.com/mlcyclops/lucidagentide/releases/latest).
+
+2. Scroll down to **Assets** and download the file that ends in `.x86_64.rpm`.
+
+3. Open a terminal in the folder where the file was saved and install it. Replace the version with the one you downloaded:
+
+   ```bash
+   sudo dnf install ./lucidagentide-desktop-2.7.1.x86_64.rpm
+   ```
+
+4. Open your applications menu and click **Lucid Agent**.
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+<Aside>
+The very first time, LUCID may show a short **Setting up LucidAgentIDE** screen while it gets ready. Wait for it to finish.
+</Aside>
+
+Next: [your first launch](/get-started/first-launch/).

@@ -1,0 +1,97 @@
+---
+title: Connect your email and calendar
+description: Add your email or calendar service to LUCID with Quick connect, then sign in to it.
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+You can let your [agents](/glossary/#agent) work with your email and calendar. LUCID does this through [MCP](/glossary/#mcp), short for Model Context Protocol: a standard way to connect an AI agent to another app or service. Each service you connect this way is called an MCP server.
+
+**Quick connect** lists official MCP servers. Every entry is the service's own address, checked against the service's own documentation; look-alike servers are left out.
+
+## Which services are listed
+
+Under **Email and calendar**, Quick connect lists:
+
+- **Gmail**
+- **Google Calendar**
+- **Microsoft 365 (Outlook mail, calendar)**
+- **Fastmail**
+- **Superhuman Mail**
+- **Nylas (email, calendar, contacts)**
+- **Calendly**
+- **Cal.com**
+
+Each card has a short note on what that service needs, such as a work account or a paid plan. Read it before you connect. For example, Microsoft 365 works only with work or school accounts, and an administrator must turn it on first.
+
+<Aside>
+If your organization manages LUCID, Quick connect may show only the services your organization approved, under **Authorized by** and your organization's name.
+</Aside>
+
+## Add your service
+
+<Steps>
+
+1. Click **Settings**, the sliders icon at the bottom of the icon bar on the left.
+
+2. Click **Connectors**.
+
+3. In the **Quick connect** card, click **Email and calendar** to show only those services.
+
+   <Shot
+     id="connect-quick-connect"
+     alt="The Settings window on Connectors. The Quick connect card is filtered to Email and calendar and shows service cards such as Gmail and Google Calendar, each with an Official docs link and a Connect button."
+     callouts={[
+       { box: "nav", label: "Connectors." },
+       { box: "chip", label: "Email and calendar shows only mail and calendar services." },
+       { box: "docs", label: "Official docs opens the service's own setup page." },
+       { box: "connect", label: "Connect adds the service." },
+     ]}
+   />
+
+4. Find your service and read its note.
+
+5. Click **Connect** on its card.
+
+   LUCID adds the service and shows a notice, for example **Fastmail added**. It tells you how to sign in, which is the next step.
+
+   <Shot
+     id="connect-quick-connect-added"
+     alt="A notice titled Fastmail added. It says to sign in, type /mcp reauth followed by the server name in chat, and the service's sign-in page opens in your browser."
+   />
+
+6. Sign in to the service. In the chat, type `/mcp reauth` followed by the service's name as it appears on its card, and press Enter. For example:
+
+   ```
+   /mcp reauth Fastmail
+   ```
+
+   Your web browser opens the service's sign-in page. Sign in and approve the access.
+
+</Steps>
+
+## Check, turn off or remove a service
+
+Services you add appear in the **MCP connectors** card, just below Quick connect. The card in Quick connect also shows **Connected**, and its button changes to **Manage**.
+
+<Shot
+  id="connect-mcp-connectors"
+  alt="The MCP connectors card in Settings listing Fastmail with an on badge, its address, and Disable and Remove buttons."
+  callouts={[
+    { box: "server", label: "The service you added, with on or off next to its name." },
+    { box: "toggle", label: "Disable turns it off without removing it. Enable turns it back on." },
+    { box: "remove", label: "Remove deletes it from LUCID." },
+  ]}
+/>
+
+## Stay in control
+
+- Everything a connected service sends back to an agent is still checked by LUCID's security gate.
+- To approve each action an agent takes, set **Mode** to **Ask** in the model button's list. LUCID then asks for your [approval](/glossary/#approval) before each tool call runs. See [Choose a model](/connect/choose-a-model/#mode-and-thinking).
+
+## Next step
+
+<LinkCard title="Look up a word" href="/glossary/" description="Agent, MCP, approval and the other words these pages use, in plain language." />

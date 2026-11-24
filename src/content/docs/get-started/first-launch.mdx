@@ -1,0 +1,202 @@
+---
+title: Your first launch
+description: Answer the short questions LUCID asks the first time you open it, and learn the parts of the main window.
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+The first time you open LUCID, it asks a few short questions, one at a time. Every question can be skipped, and you can change every answer later. This page walks through them in order.
+
+<Shot
+  id="get-started-first-launch-window"
+  alt="The LUCID window on a first launch. The app is dimmed behind a box titled Welcome - what's your role?, and a card titled Make LucidAgent yours sits in the top-right corner."
+  callouts={[
+    { box: "role", label: "The first question appears over the app." },
+    { box: "personalize", label: "A card about personalization appears in the corner. It waits until you answer it." },
+  ]}
+/>
+
+## Pick your role
+
+The first box is titled **Welcome - what's your role?** Your role decides what LUCID shows you first. It never locks anything away: every panel stays one keyboard shortcut away, **Ctrl+K** on Windows and Linux or **⌘K** on a Mac.
+
+<Shot
+  id="get-started-role-picker"
+  alt="The Welcome - what's your role? box with five cards: Developer, Security engineer, Manager, Executive and LUCID Agent, and a Skip - use Developer button at the bottom."
+  callouts={[
+    { box: "developer", label: "Developer: opens on the chat with the Memory panel. Security stays out of your way until something is blocked." },
+    { box: "security", label: "Security engineer: opens on the Security panel, with quarantine, findings and approvals up front." },
+    { box: "manager", label: "Manager: leads with spending, savings and how much work gets done." },
+    { box: "executive", label: "Executive: a few reassurance signals and the engineering brief, nothing operational." },
+    { box: "lucid-agent", label: "LUCID Agent: a hands-free view where you talk with LUCID by voice and the side panels step away." },
+    { box: "skip", label: "Skip - use Developer: not sure? Skip, and LUCID uses the Developer view." },
+  ]}
+/>
+
+<Steps>
+
+1. Read the five cards. Each says where it lands and what you see there.
+
+2. Click the card that fits you best, or click **Skip - use Developer**.
+
+</Steps>
+
+<Aside>
+If you pick **LUCID Agent**, the side panels step away and the LUCID stage fills the window. Press **Esc** to step out to the full app. To step back in, click **Stage** at the top of the window.
+</Aside>
+
+## Add your work email, or skip it
+
+Next, LUCID asks **Set your work email (optional)**. LUCID uses it to count how many lines of code each AI wrote in each project. It stays on your computer.
+
+<Shot
+  id="get-started-work-email"
+  alt="The Set your work email (optional) box with an email field, a Skip - use DEMO-PC button and a Save button."
+  callouts={[
+    { box: "email", label: "Type your work email here if you want code activity counted under your name." },
+    { box: "skip", label: "Or skip: LUCID uses your computer's name instead. Here the computer is called DEMO-PC." },
+    { box: "save", label: "Save keeps the email you typed." },
+  ]}
+/>
+
+<Steps>
+
+1. Type your work email and click **Save**, or click the **Skip** button. The Skip button shows your computer's name.
+
+</Steps>
+
+## Answer the government question
+
+LUCID then asks **Do you handle Government CUI?** CUI means Controlled Unclassified Information, a kind of sensitive government data. Most people answer No.
+
+<Shot
+  id="get-started-cui-question"
+  alt="The Do you handle Government CUI? box with two choices: Yes - set up CUI (gov) mode, and No - standard use."
+  callouts={[
+    { box: "yes", label: "Yes: only for government users and contractors who must keep CUI on an approved service." },
+    { box: "no", label: "No - standard use: for everyone else." },
+  ]}
+/>
+
+<Steps>
+
+1. Click **No - standard use**, unless your job requires CUI handling.
+
+</Steps>
+
+## Connect an AI, now or later
+
+If no AI is set up yet, LUCID asks **Connect an AI provider**. A [model provider](/glossary/#model-provider) is the company whose AI does the thinking, such as Anthropic for Claude or OpenAI for ChatGPT. LUCID needs at least one before you can chat.
+
+<Shot
+  id="get-started-connect-provider"
+  alt="The Connect an AI provider box with two choices: Connect a provider, and I'll do it later."
+  callouts={[
+    { box: "connect", label: "Connect a provider opens the list of AI providers, where you sign in or paste a key." },
+    { box: "later", label: "I'll do it later closes the box. You can connect from the model picker or Settings any time." },
+  ]}
+/>
+
+<Steps>
+
+1. Click **Connect a provider** to sign in or paste a key now, or click **I'll do it later**. You can add one any time from the model picker or Settings.
+
+</Steps>
+
+The [Connect your AI](/connect/) section walks through both ways, step by step.
+
+## Take the short tour, or skip it
+
+Last, a short guided tour points at the main parts of the window, one card at a time. Which parts it shows depends on the role you picked.
+
+<Shot
+  id="get-started-tour"
+  alt="The LUCID window with a tour card that points at the message box. The card has Next and Skip tour buttons."
+  callouts={[
+    { box: "card", label: "Each card explains one part of the window." },
+    { box: "next", label: "Next moves to the next card. The last card says Done." },
+    { box: "skip", label: "Skip tour closes it. You can also press Esc." },
+  ]}
+/>
+
+<Steps>
+
+1. Click **Next** to go through the tour, or click **Skip tour**.
+
+2. To watch it again later, open **About** and click **Take the tour**.
+
+</Steps>
+
+## Make LUCID yours, or later
+
+A card titled **Make LucidAgent yours** appears in the top-right corner when LUCID first opens, and it stays until you answer it. It offers to bring in your chat history from ChatGPT, Claude or Gemini, so LUCID can tailor its answers to you. It is optional, private and stays on your computer.
+
+<Shot
+  id="get-started-personalize"
+  alt="A card titled Make LucidAgent yours with two buttons: Set up personalization and Later."
+  callouts={[
+    { box: "setup", label: "Set up personalization opens the Personalization settings." },
+    { box: "later", label: "Later closes the card." },
+  ]}
+/>
+
+<Steps>
+
+1. Click **Later** for now. You can set it up any time in **Settings**, under **Workspace & profile**, in **Personalization**.
+
+</Steps>
+
+## The main window
+
+When the questions are done, you see the main window.
+
+<Shot
+  id="get-started-main-window"
+  alt="The LUCID main window: a narrow icon bar on the left, the Sessions list next to it, the chat area with the message box at the bottom, the model button at the top, and a panel on the right."
+  callouts={[
+    { box: "rail", label: "The icon bar: each icon opens a panel. Hover an icon to see its name." },
+    { box: "sidebar", label: "Sessions: your conversations. Each one is a separate chat." },
+    { box: "newSession", label: "New session starts a fresh conversation." },
+    { box: "model", label: "The model button: choose which AI answers you and how hard it thinks." },
+    { box: "composer", label: "The message box: type what you want done and press Enter to send." },
+    { box: "inspector", label: "The right rail: your Agents, one for each folder you work in. A button at its top switches it to live numbers, and the arrow opens the full Security and Memory panel." },
+    { box: "status", label: "The status bar. Until you connect an AI, it says Loading models." },
+    { box: "settings", label: "Settings." },
+    { box: "about", label: "About: your version, and the tour again." },
+  ]}
+/>
+
+A model is the specific AI that answers you, such as one version of Claude. Until you connect an AI, LUCID has nothing to chat with and the status bar keeps saying **Loading models**. Connecting one is the next step.
+
+## Change your role later
+
+<Steps>
+
+1. Click **Settings**, the sliders icon at the bottom of the icon bar on the left.
+
+2. Click **Workspace & profile**.
+
+3. Click **Profile** to open it.
+
+4. Under **Role**, click the role you want. It takes effect right away.
+
+</Steps>
+
+<Shot
+  id="get-started-change-role"
+  alt="The Settings window open on Workspace and profile, with the Profile section expanded and the Role buttons Developer, Security engineer, Manager, Executive and LUCID Agent."
+  callouts={[
+    { box: "category", label: "Workspace & profile." },
+    { box: "profile", label: "Profile." },
+    { box: "roles", label: "The four roles." },
+    { box: "stage", label: "The hands-free LUCID Agent view." },
+    { box: "tour", label: "Take the tour replays the guided tour." },
+  ]}
+/>
+
+## Next step
+
+<LinkCard title="Connect your AI" href="/connect/" description="Sign in with a subscription you already pay for, or paste an API key." />

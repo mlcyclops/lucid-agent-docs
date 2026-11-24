@@ -1,0 +1,109 @@
+---
+title: Use an API key
+description: Paste an API key from your AI provider into LUCID, check that it worked, and see where LUCID keeps it.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+An [API key](/glossary/#api-key) is a long secret code that a [model provider](/glossary/#model-provider) gives you, so programs like LUCID can use its AI on your account. The [API](/glossary/#api) is the doorway programs use to talk to the provider's AI; the key is what lets LUCID through it.
+
+Use through a key is billed by the provider, separately from any monthly subscription, usually by how much you use.
+
+<Aside type="caution">
+Treat a key like a password. Anyone who has it can use your account. Never paste it into a chat message or share it in a screenshot.
+</Aside>
+
+## Before you start
+
+Create a key on your provider's website and copy it. If your company gave you a key, have it ready. The example on this page uses **OpenAI · ChatGPT**; every provider works the same way.
+
+## Add your key
+
+<Steps>
+
+1. Click the model button at the top of the window. It shows the name of the current model.
+
+2. At the bottom of the list, click **Add or manage providers**. The Provider Hub opens.
+
+3. Click your provider's tile, for example **OpenAI · ChatGPT**.
+
+4. Click in the key box next to the **Save** button. It says **Paste**, then the key's name, for example **Paste OPENAI_API_KEY…**. Paste your key.
+
+   The row at the top of the tile, with **Add account**, is for keeping more than one named account with the same provider. You do not need it for your first key.
+
+   LUCID shows dots instead of the key, so it stays hidden on screen.
+
+   <Shot
+     id="connect-hub-key"
+     alt="The Provider Hub with the OpenAI · ChatGPT tile open. A pasted key shows as dots in the key box, next to a Save button. The key in this picture is a fake demo key."
+     callouts={[
+       { box: "key", label: "The key box. The key shows as dots." },
+       { box: "save", label: "Save stores the key." },
+     ]}
+   />
+
+5. Click **Save**. LUCID confirms with a notice that names the key, for example **OPENAI_API_KEY saved**. New messages use the key right away.
+
+</Steps>
+
+## Check that it worked
+
+The provider's tile now says **CONNECTED**, and the provider's models appear in the model list.
+
+<Shot
+  id="connect-hub-connected"
+  alt="The Provider Hub list of providers. The Anthropic · Claude and OpenAI · ChatGPT tiles both show a connected badge."
+  callouts={[
+    { box: "chatgpt", label: "Connected with the API key from this page." },
+    { box: "claude", label: "Connected with a subscription sign-in. Both kinds can sit side by side." },
+  ]}
+/>
+
+If the tile does not say **CONNECTED** after you click **Save**, LUCID could not store the key. See [Where LUCID keeps your key](#where-lucid-keeps-your-key).
+
+## Replace or remove a key
+
+<Steps>
+
+1. Open the Provider Hub and click your provider's tile.
+
+2. To replace the key, paste the new one into the key box and click **Save**. The box shows the last four characters of the saved key, so you can tell which one is in use.
+
+3. To remove the key, click **Clear**.
+
+</Steps>
+
+## Where LUCID keeps your key
+
+LUCID stores keys on this computer, in your operating system's encrypted vault:
+
+- **Windows:** Windows DPAPI.
+- **Mac:** the macOS Keychain.
+- **Linux:** the Linux Secret Service.
+
+If your computer has no such vault, LUCID keeps keys in a file that only your user account can read, and says so. If the vault cannot store a key, nothing is saved, and LUCID asks you to check that you are signed in to your account's keychain and try again.
+
+To see which one your computer uses, open **Settings**, click **Models & providers**, and open the **Providers** card.
+
+<Shot
+  id="connect-settings-providers"
+  alt="The Settings window on Models & providers, with the Providers card open. A note says keys are encrypted by the OS vault (Windows DPAPI). Below, OpenAI · ChatGPT shows a key badge ending in 0000 and Anthropic · Claude shows OAuth active."
+  callouts={[
+    { box: "nav", label: "Models & providers." },
+    { box: "hub", label: "Open the Provider Hub is another way into the hub." },
+    { box: "vault", label: "Where this computer keeps your keys. This one uses Windows DPAPI." },
+    { box: "key", label: "A saved key shows its last four characters. This is the fake demo key." },
+    { box: "oauth", label: "OAuth active means a subscription sign-in." },
+  ]}
+/>
+
+## Providers that use keys only
+
+Some providers have no subscription sign-in in LUCID. Their tiles say **ADD KEY**. Among them are **Azure · OpenAI**, **Amazon · Bedrock** and **Google Cloud · Gemini Enterprise**. Their tiles have extra boxes, such as a resource name or a project, that your administrator can tell you how to fill in.
+
+## Next step
+
+<LinkCard title="Choose a model" href="/connect/choose-a-model/" description="Pick which of your provider's models answers you." />

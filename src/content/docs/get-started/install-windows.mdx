@@ -1,0 +1,61 @@
+---
+title: Install on Windows
+description: Download the LUCID installer for Windows, run it, and open LUCID from the Start menu.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from "@astrojs/starlight/components";
+
+LUCID for Windows comes as one installer file. You download it from the LUCID releases page on GitHub, the website where LUCID is published.
+
+## Which file to download
+
+Most people want **LucidAgent-Setup.exe**. The other files are for special cases.
+
+| File | Pick it when |
+| :-- | :-- |
+| `LucidAgent-Setup.exe` | You want the normal install. It adds LUCID to the Start menu and the desktop, and LUCID updates itself. |
+| `LucidAgent-portable.exe` | You want to run LUCID without installing it, for example from a folder you carry around. |
+| `LucidAgent-2.7.1-x64.msi` | Your IT team installs software for everyone on the computer. |
+| `LucidAgent-2.7.1-x64.appx` | Your IT team deploys apps as an MSIX package. |
+
+The `.msi` and `.appx` names include the version number, so they change with each release. The pattern is `LucidAgent-<version>-x64.msi` and `LucidAgent-<version>-x64.appx`.
+
+<Aside>
+LUCID for Windows is built for 64-bit (x64) computers. To check yours, open **Settings**, then **System**, then **About**, and look at **System type**.
+</Aside>
+
+## Install LUCID
+
+<Steps>
+
+1. Open the latest release page: [github.com/mlcyclops/lucidagentide/releases/latest](https://github.com/mlcyclops/lucidagentide/releases/latest).
+
+2. Scroll down to **Assets** and click **LucidAgent-Setup.exe**. Your browser saves it, usually in your **Downloads** folder.
+
+3. Open the file you downloaded.
+
+4. If Windows shows a blue box that says **Windows protected your PC**, check that the publisher is **TECHLEAD 187 LLC**. Then click **More info**, then **Run anyway**. The LUCID installers are signed by TECHLEAD 187 LLC, and Windows can still show this box for a newer download.
+
+5. The installer asks a few questions. You can keep the suggested folder or choose another one. Click through to the end to finish.
+
+</Steps>
+
+The installer puts LUCID in your own user account, so you do not need to be an administrator. It also adds a **Lucid Agent** shortcut to the Start menu and to your desktop.
+
+## Open LUCID
+
+<Steps>
+
+1. Click the **Start** button.
+
+2. Type `Lucid Agent` and press **Enter**. You can also double-click the **Lucid Agent** shortcut on your desktop.
+
+3. The very first time, LUCID may show a short **Setting up LucidAgentIDE** screen while it gets ready. Wait for it to finish.
+
+</Steps>
+
+If you picked the portable file, there is nothing to install: double-click `LucidAgent-portable.exe` each time you want to use LUCID.
+
+Next: [your first launch](/get-started/first-launch/).

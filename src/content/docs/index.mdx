@@ -1,0 +1,30 @@
+---
+title: LUCID Agent Docs
+description: Step-by-step help for LUCID Agent, from installing it to connecting your AI and getting work done.
+template: splash
+hero:
+  tagline: LUCID Agent is a desktop app where AI agents do real work on your computer, and you approve what they do. Start here, one task at a time.
+  image:
+    file: ../../assets/lucid.svg
+    alt: ""
+  actions:
+    - text: Install LUCID
+      link: /get-started/
+      icon: right-arrow
+    - text: Connect your AI
+      link: /connect/
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## What do you want to do?
+
+<CardGrid>
+  <LinkCard title="Install LUCID" href="/get-started/" description="Download LUCID for Windows, Mac or Linux and open it for the first time." />
+  <LinkCard title="Connect your AI" href="/connect/" description="Sign in with a subscription you already pay for, or paste an API key. Not sure which you have? Start here." />
+  <LinkCard title="Connect your email and calendar" href="/connect/email-and-calendar/" description="Add a connector so agents can work with your mail and calendar." />
+  <LinkCard title="Look up a word" href="/glossary/" description="API, API key, model provider, agent, approval and the other words these pages use, in plain language." />
+  <LinkCard title="Get a world" href="https://lucid-agents.com/" description="Lucid Agent Worlds turn your agents into a 3D scene. Browse them in the LUCID store." />
+  <LinkCard title="Reference for developers" href="https://github.com/mlcyclops/lucidagentide#readme" description="The command line, lucid hub, settings, the security model and the plugin contracts." />
+</CardGrid>

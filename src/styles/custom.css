@@ -1,0 +1,94 @@
+/* LUCID brand: magenta and cyan from the app icon (desktop/build/icon.svg). */
+:root {
+  --sl-color-accent-low: #2c1233;
+  --sl-color-accent: #c64bd6;
+  --sl-color-accent-high: #f0c4f7;
+  --lucid-cyan: #46c8dc;
+}
+:root[data-theme="light"] {
+  --sl-color-accent-low: #f4dcf8;
+  --sl-color-accent: #a324b4;
+  --sl-color-accent-high: #4d0f57;
+  --lucid-cyan: #0f7d92;
+}
+
+/* Breadcrumbs */
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+.crumbs li {
+  white-space: nowrap;
+}
+.crumbs li + li::before {
+  content: "/";
+  margin-inline-end: 0.5rem;
+  color: var(--sl-color-gray-4);
+}
+.crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+.crumbs a:hover {
+  color: var(--sl-color-text-accent);
+}
+
+/* Screenshots with numbered callouts */
+.shot {
+  margin-block: 1.5rem;
+}
+.shot-frame {
+  position: relative;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: #0a0b0f;
+}
+.shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.shot-frame svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.shot-box {
+  fill: none;
+  stroke: var(--lucid-cyan);
+  stroke-width: 3;
+}
+.shot-dot {
+  fill: var(--lucid-cyan);
+}
+.shot-num {
+  fill: #08090d;
+  font-weight: 700;
+  font-family: var(--sl-font);
+}
+.shot figcaption {
+  margin-top: 0.6rem;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-2);
+}
+.shot figcaption p {
+  margin: 0 0 0.4rem;
+}
+.shot-callouts {
+  margin: 0;
+  padding-inline-start: 1.4rem;
+}
+.shot-callouts li::marker {
+  color: var(--lucid-cyan);
+  font-weight: 700;
+}

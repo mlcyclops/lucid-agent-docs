@@ -1,0 +1,378 @@
+{
+  "module": "connect",
+  "capturedAt": "2026-11-24T14:28:56.744Z",
+  "shots": {
+    "connect-first-run": {
+      "file": "connect-first-run.webp",
+      "width": 744,
+      "height": 412,
+      "boxes": {
+        "connect": [
+          35,
+          218,
+          674,
+          74
+        ],
+        "later": [
+          35,
+          303,
+          674,
+          74
+        ]
+      },
+      "step": "Shapes the engine answers in the browser, reloads, skips the role, email and CUI questions, and photographs the Connect an AI provider prompt."
+    },
+    "connect-window": {
+      "file": "connect-window.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "pill": [
+          113,
+          6,
+          160,
+          31
+        ],
+        "settings": [
+          7,
+          814,
+          43,
+          43
+        ]
+      },
+      "step": "Chooses I'll do it later, skips the tour, and photographs the window with the model pill and the Settings button."
+    },
+    "connect-picker-login": {
+      "file": "connect-picker-login.webp",
+      "width": 391,
+      "height": 511,
+      "boxes": {
+        "pill": [
+          12,
+          6,
+          160,
+          31
+        ],
+        "login": [
+          29,
+          85,
+          89,
+          31
+        ],
+        "list": [
+          29,
+          122,
+          332,
+          183
+        ],
+        "empty": [
+          29,
+          360,
+          332,
+          47
+        ],
+        "add": [
+          29,
+          414,
+          332,
+          37
+        ]
+      },
+      "step": "Opens the model picker with nothing connected and waits for the model check to finish, so the Login row and the empty list show."
+    },
+    "connect-hub": {
+      "file": "connect-hub.webp",
+      "width": 680,
+      "height": 774,
+      "boxes": {
+        "title": [
+          79,
+          19,
+          580,
+          28
+        ],
+        "guide": [
+          21,
+          379,
+          204,
+          25
+        ],
+        "close": [
+          635,
+          13,
+          32,
+          25
+        ]
+      },
+      "step": "Clicks Add or manage providers and photographs the top of the Provider Hub."
+    },
+    "connect-hub-claude": {
+      "file": "connect-hub-claude.webp",
+      "width": 680,
+      "height": 774,
+      "boxes": {
+        "oauth": [
+          33,
+          416,
+          133,
+          25
+        ],
+        "key": [
+          33,
+          449,
+          547,
+          35
+        ]
+      },
+      "step": "Opens the Claude tile in the Provider Hub and photographs its Connect via OAuth button and its key box."
+    },
+    "connect-signin-browser": {
+      "file": "connect-signin-browser.webp",
+      "width": 364,
+      "height": 184,
+      "boxes": {
+        "open": [
+          55,
+          133,
+          115,
+          25
+        ],
+        "copy": [
+          177,
+          133,
+          69,
+          25
+        ]
+      },
+      "step": "Closes the hub (its backdrop blurs notices), clicks Login next to Claude in the model picker (the request is answered in the browser, so no broker or browser opens), photographs the browser notice, then lets the demo sign-in land and photographs the result."
+    },
+    "connect-signin-done": {
+      "file": "connect-signin-done.webp",
+      "width": 364,
+      "height": 130,
+      "boxes": {},
+      "step": "Closes the hub (its backdrop blurs notices), clicks Login next to Claude in the model picker (the request is answered in the browser, so no broker or browser opens), photographs the browser notice, then lets the demo sign-in land and photographs the result."
+    },
+    "connect-hub-key": {
+      "file": "connect-hub-key.webp",
+      "width": 680,
+      "height": 774,
+      "boxes": {
+        "key": [
+          33,
+          411,
+          547,
+          35
+        ],
+        "save": [
+          588,
+          416,
+          59,
+          25
+        ]
+      },
+      "step": "Opens the Provider Hub again, opens the ChatGPT tile, types an obviously fake key, photographs it, saves it, and photographs the connected tiles."
+    },
+    "connect-hub-connected": {
+      "file": "connect-hub-connected.webp",
+      "width": 680,
+      "height": 774,
+      "boxes": {
+        "claude": [
+          230,
+          470,
+          71,
+          15
+        ],
+        "chatgpt": [
+          230,
+          421,
+          71,
+          15
+        ]
+      },
+      "step": "Opens the Provider Hub again, opens the ChatGPT tile, types an obviously fake key, photographs it, saves it, and photographs the connected tiles."
+    },
+    "connect-picker-models": {
+      "file": "connect-picker-models.webp",
+      "width": 391,
+      "height": 416,
+      "boxes": {
+        "pill": [
+          12,
+          6,
+          159,
+          31
+        ],
+        "search": [
+          29,
+          126,
+          332,
+          37
+        ],
+        "current": [
+          35,
+          205,
+          326,
+          38
+        ],
+        "row": [
+          35,
+          285,
+          326,
+          38
+        ],
+        "login": [
+          29,
+          85,
+          89,
+          31
+        ]
+      },
+      "step": "Opens the model picker with Claude signed in, photographs the list, opens the Login row, picks Claude Sonnet 4.6, and photographs the pill."
+    },
+    "connect-picker-login-signed-in": {
+      "file": "connect-picker-login-signed-in.webp",
+      "width": 356,
+      "height": 238,
+      "boxes": {
+        "toggle": [
+          12,
+          12,
+          89,
+          31
+        ],
+        "signedin": [
+          271,
+          199,
+          62,
+          17
+        ],
+        "login": [
+          286,
+          58,
+          47,
+          25
+        ]
+      },
+      "step": "Opens the model picker with Claude signed in, photographs the list, opens the Login row, picks Claude Sonnet 4.6, and photographs the pill."
+    },
+    "connect-model-chosen": {
+      "file": "connect-model-chosen.webp",
+      "width": 288,
+      "height": 47,
+      "boxes": {
+        "pill": [
+          108,
+          6,
+          169,
+          31
+        ]
+      },
+      "step": "Opens the model picker with Claude signed in, photographs the list, opens the Login row, picks Claude Sonnet 4.6, and photographs the pill."
+    },
+    "connect-settings-providers": {
+      "file": "connect-settings-providers.webp",
+      "width": 1100,
+      "height": 760,
+      "boxes": {
+        "nav": [
+          9,
+          132,
+          215,
+          30
+        ],
+        "hub": [
+          262,
+          109,
+          156,
+          25
+        ],
+        "vault": [
+          262,
+          165,
+          808,
+          42
+        ],
+        "key": [
+          867,
+          410,
+          74,
+          20
+        ],
+        "oauth": [
+          962,
+          516,
+          95,
+          20
+        ]
+      },
+      "step": "Opens Settings, Models & providers, expands Providers, and photographs the Provider Hub button and the note on where keys are kept."
+    },
+    "connect-quick-connect": {
+      "file": "connect-quick-connect.webp",
+      "width": 1100,
+      "height": 760,
+      "boxes": {
+        "nav": [
+          9,
+          164,
+          215,
+          30
+        ],
+        "chip": [
+          640,
+          103,
+          120,
+          23
+        ],
+        "connect": [
+          446,
+          311,
+          61,
+          25
+        ],
+        "docs": [
+          260,
+          315,
+          63,
+          18
+        ]
+      },
+      "step": "Opens Settings, Connectors, filters Quick connect to Email and calendar, photographs it, connects Fastmail and photographs the notice and the MCP connectors list."
+    },
+    "connect-quick-connect-added": {
+      "file": "connect-quick-connect-added.webp",
+      "width": 364,
+      "height": 206,
+      "boxes": {},
+      "step": "Opens Settings, Connectors, filters Quick connect to Email and calendar, photographs it, connects Fastmail and photographs the notice and the MCP connectors list."
+    },
+    "connect-mcp-connectors": {
+      "file": "connect-mcp-connectors.webp",
+      "width": 1100,
+      "height": 760,
+      "boxes": {
+        "server": [
+          262,
+          277,
+          808,
+          112
+        ],
+        "toggle": [
+          276,
+          351,
+          56,
+          25
+        ],
+        "remove": [
+          340,
+          351,
+          77,
+          25
+        ]
+      },
+      "step": "Opens Settings, Connectors, filters Quick connect to Email and calendar, photographs it, connects Fastmail and photographs the notice and the MCP connectors list."
+    }
+  }
+}
