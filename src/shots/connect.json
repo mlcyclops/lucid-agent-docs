@@ -1,6 +1,6 @@
 {
   "module": "connect",
-  "capturedAt": "2026-11-24T14:52:23.183Z",
+  "capturedAt": "2026-11-24T15:45:11.570Z",
   "shots": {
     "connect-first-run": {
       "file": "connect-first-run.webp",
@@ -284,25 +284,25 @@
         ],
         "hub": [
           262,
-          109,
+          111,
           156,
           25
         ],
         "vault": [
           262,
-          165,
+          167,
           808,
           42
         ],
         "key": [
           867,
-          410,
+          412,
           74,
           20
         ],
         "oauth": [
           962,
-          516,
+          518,
           95,
           20
         ]

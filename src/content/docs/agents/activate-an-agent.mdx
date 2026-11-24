@@ -1,0 +1,125 @@
+---
+title: Activate an Agent
+description: Start work in an Agent's folder by moving the main chat there, starting a Fleet session, or starting an Agent World session.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+**Activate** starts work in an Agent's folder. You choose where that work happens: in the main chat, in a new card in your [Fleet](/glossary/#fleet), or in Agent Worlds.
+
+## Open the Activate choices
+
+<Steps>
+
+1. On the right rail's Agents view, click the Agent. See [Your Agents](/agents/) if the rail shows numbers instead.
+
+2. Its module opens with the **Activate** choices showing.
+
+   <Shot
+     id="agents-activate-menu"
+     alt="The module of the website Agent with Activate open. Under it are four choices: Take over main composer, Start new Fleet session, Agent World session, and Schedule this Agent, each with a short line under it."
+     callouts={[
+       { box: "activate", label: "Activate opens and closes the list." },
+       { box: "takeover", label: "Take over main composer: the main chat moves to this folder." },
+       { box: "fleet", label: "Start new Fleet session: a fresh Fleet agent in this folder." },
+       { box: "world", label: "Agent World session: a Fleet agent plus its panel in Agent Worlds." },
+       { box: "schedule", label: "Schedule this Agent: run it later. See Schedule an Agent." },
+     ]}
+   />
+
+3. Click one of the choices below.
+
+</Steps>
+
+The module closes at once, and notes at the top right of the window say what is happening. If something fails, the module opens again on the Agent with the reason.
+
+## Take over main composer
+
+The composer is the message box at the bottom of the main chat. This choice moves the main chat, which LUCID calls **Main**, into the Agent's folder.
+
+- A note says **Moving Main to** and the Agent's name. Main's agent restarts in the new folder. The message box is ready when that note goes away.
+- If Main already had a conversation, it is not lost. It goes on in a new Fleet agent in the old folder. A note says, for example, **Main is on website**, with a **Show lane** button that opens that Fleet card.
+
+The first time Main works in a folder, LUCID may ask a setup question about that folder.
+
+### When Main is still working
+
+If Main is in the middle of a turn, LUCID asks first, above the message box.
+
+<Shot
+  id="agents-activate-busy"
+  alt="A box above the message box titled Main is still working. It says Main has a turn running in sample-platform and its work moves to a Fleet lane before Main opens website. Three choices follow: After this turn, Move it now, and Stay here."
+  callouts={[
+    { box: "after", label: "After this turn: Main finishes, then moves." },
+    { box: "now", label: "Move it now: stops the turn and sends your prompt again in a Fleet agent." },
+    { box: "stay", label: "Stay here: nothing moves." },
+  ]}
+/>
+
+- **After this turn:** Main finishes its turn. Then its conversation goes on in a Fleet agent, and Main opens the Agent's folder. Until then a note says **Handoff after this turn**. Click **Cancel handoff** in that note to call it off.
+- **Move it now:** stops Main's turn, then sends your last prompt again in a Fleet agent, so the work goes on there.
+- **Stay here:** nothing moves. Pressing **Esc** does the same.
+
+## Start new Fleet session
+
+This starts a new agent in the Agent's folder, as a new card in the Fleet.
+
+<Steps>
+
+1. Click **Start new Fleet session**.
+
+   The Fleet opens, and the new card appears while the agent loads. A note says **Starting** and the Agent's name.
+
+2. When the agent is ready, a note says it is ready: "Type its first prompt in its card."
+
+   <Shot
+     id="agents-activate-fleet"
+     alt="The Fleet panel open over the lower right of the window, with two cards. The new card is named website, has a website folder tag in its header, says No output yet, and its message box is selected."
+     callouts={[
+       { box: "card", label: "The new agent's card." },
+       { box: "folder", label: "The folder it works in." },
+       { box: "input", label: "Type its first prompt here, then press Enter." },
+     ]}
+   />
+
+</Steps>
+
+To learn the rest of the Fleet, see [Run agents side by side](/agents/run-agents-side-by-side/).
+
+## Agent World session
+
+This also starts a new Fleet agent in the folder, and opens Agent Worlds, LUCID's animated view of your agents, on that agent's panel.
+
+<Steps>
+
+1. Click **Agent World session**.
+
+   Agent Worlds opens. A note says **Starting** and the Agent's name.
+
+2. When the agent stands in Agent Worlds, a note says it is ready, and its panel is open with the message box selected.
+
+   <Shot
+     id="agents-activate-world"
+     alt="Agent Worlds in 3D, with agents shown as figures in glass boxes. At the lower left is the panel of the data-reports agent, with its status, Stop turn, End agent and Kill buttons, and a message box at the bottom."
+     callouts={[
+       { box: "panel", label: "The new agent's panel." },
+       { box: "input", label: "Type a prompt for it here." },
+     ]}
+   />
+
+3. Type a prompt in the panel and press **Enter**.
+
+</Steps>
+
+To close Agent Worlds, press **Esc** or click the **X** at its top right.
+
+<Aside type="note">
+The agent also appears in the Fleet, so you can carry on there.
+</Aside>
+
+## Next step
+
+<LinkCard title="Schedule an Agent" href="/agents/schedule-an-agent/" description="Run an Agent on a date, or on a repeat." />

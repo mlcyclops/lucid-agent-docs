@@ -1,0 +1,764 @@
+{
+  "module": "agents",
+  "capturedAt": "2026-11-24T15:40:58.419Z",
+  "shots": {
+    "agents-rail": {
+      "file": "agents-rail.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "rail": [
+          1340,
+          54,
+          96,
+          803
+        ],
+        "toggle": [
+          1395,
+          63,
+          35,
+          32
+        ],
+        "work": [
+          1354,
+          245,
+          76,
+          52
+        ],
+        "idle": [
+          1354,
+          186,
+          76,
+          52
+        ],
+        "add": [
+          1354,
+          364,
+          76,
+          52
+        ]
+      },
+      "step": "Starts a lane in docs-site and prompts it, so that Agent is lit, then shoots the whole window with the rail on its Agents view."
+    },
+    "agents-metrics": {
+      "file": "agents-metrics.webp",
+      "width": 99,
+      "height": 484,
+      "boxes": {
+        "toggle": [
+          57,
+          20,
+          35,
+          32
+        ],
+        "tiles": [
+          16,
+          58,
+          76,
+          411
+        ]
+      },
+      "step": "Flips the rail to Metrics with the toggle and shoots the rail, then flips it back to Agents."
+    },
+    "agents-module": {
+      "file": "agents-module.webp",
+      "width": 385,
+      "height": 326,
+      "boxes": {
+        "tile": [
+          298,
+          137,
+          76,
+          52
+        ],
+        "name": [
+          118,
+          29,
+          155,
+          21
+        ],
+        "state": [
+          118,
+          70,
+          155,
+          17
+        ],
+        "color": [
+          27,
+          161,
+          246,
+          20
+        ],
+        "hue": [
+          27,
+          136,
+          246,
+          16
+        ],
+        "rename": [
+          21,
+          198,
+          258,
+          33
+        ],
+        "activate": [
+          21,
+          231,
+          258,
+          33
+        ],
+        "remove": [
+          21,
+          272,
+          258,
+          33
+        ]
+      },
+      "step": "Hovers the website Agent and shoots its module beside the rail."
+    },
+    "agents-remove-confirm": {
+      "file": "agents-remove-confirm.webp",
+      "width": 278,
+      "height": 507,
+      "boxes": {
+        "yes": [
+          155,
+          465,
+          41,
+          29
+        ],
+        "no": [
+          204,
+          465,
+          60,
+          29
+        ]
+      },
+      "step": "Clicks the website Agent, clicks Remove from rail and shoots the confirm, then chooses Cancel."
+    },
+    "agents-add-intro": {
+      "file": "agents-add-intro.webp",
+      "width": 413,
+      "height": 409,
+      "boxes": {
+        "add": [
+          326,
+          176,
+          76,
+          52
+        ],
+        "about": [
+          15,
+          100,
+          298,
+          155
+        ],
+        "recent": [
+          21,
+          285,
+          286,
+          33
+        ],
+        "pick": [
+          21,
+          319,
+          286,
+          33
+        ],
+        "cancel": [
+          251,
+          360,
+          52,
+          25
+        ]
+      },
+      "step": "Clicks + Add agent and shoots the first step of the popover."
+    },
+    "agents-add-purpose": {
+      "file": "agents-add-purpose.webp",
+      "width": 413,
+      "height": 347,
+      "boxes": {
+        "name": [
+          118,
+          38,
+          183,
+          24
+        ],
+        "path": [
+          118,
+          62,
+          183,
+          16
+        ],
+        "purposes": [
+          21,
+          130,
+          286,
+          40
+        ],
+        "chosen": [
+          21,
+          250,
+          286,
+          40
+        ],
+        "back": [
+          164,
+          298,
+          60,
+          25
+        ],
+        "add": [
+          230,
+          298,
+          73,
+          25
+        ]
+      },
+      "step": "Picks the recent folder trip-photos, types a name, picks Something else, and shoots the second step."
+    },
+    "agents-add-done": {
+      "file": "agents-add-done.webp",
+      "width": 101,
+      "height": 442,
+      "boxes": {
+        "tile": [
+          14,
+          78,
+          76,
+          52
+        ]
+      },
+      "step": "Clicks Add agent and shoots the new Agent at the top of the rail with its toast."
+    },
+    "agents-activate-menu": {
+      "file": "agents-activate-menu.webp",
+      "width": 278,
+      "height": 506,
+      "boxes": {
+        "activate": [
+          10,
+          220,
+          258,
+          33
+        ],
+        "takeover": [
+          31,
+          257,
+          237,
+          50
+        ],
+        "fleet": [
+          31,
+          306,
+          237,
+          50
+        ],
+        "world": [
+          31,
+          356,
+          237,
+          50
+        ],
+        "schedule": [
+          31,
+          405,
+          237,
+          50
+        ]
+      },
+      "step": "Clicks the website Agent so its module opens with Activate expanded, and shoots the four choices."
+    },
+    "agents-activate-fleet": {
+      "file": "agents-activate-fleet.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "card": [
+          1049,
+          414,
+          364,
+          415
+        ],
+        "folder": [
+          1192,
+          422,
+          51,
+          18
+        ],
+        "input": [
+          1083,
+          794,
+          290,
+          28
+        ]
+      },
+      "step": "Chooses Start new Fleet session and shoots the window once the new lane's card is ready."
+    },
+    "agents-activate-world": {
+      "file": "agents-activate-world.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "panel": [
+          14,
+          541,
+          340,
+          349
+        ],
+        "input": [
+          28,
+          830,
+          279,
+          53
+        ]
+      },
+      "step": "Chooses Agent World session on the data-reports Agent and shoots Agent Worlds with the new agent's prompt panel open."
+    },
+    "agents-activate-busy": {
+      "file": "agents-activate-busy.webp",
+      "width": 1183,
+      "height": 320,
+      "boxes": {
+        "after": [
+          23,
+          75,
+          816,
+          54
+        ],
+        "now": [
+          23,
+          135,
+          816,
+          54
+        ],
+        "stay": [
+          23,
+          195,
+          816,
+          34
+        ]
+      },
+      "step": "Sends Main a prompt, chooses Take over main composer on the website Agent while Main works, shoots the question, then chooses Stay here and lets Main finish."
+    },
+    "agents-schedule-form": {
+      "file": "agents-schedule-form.webp",
+      "width": 310,
+      "height": 502,
+      "boxes": {
+        "repeat": [
+          16,
+          123,
+          278,
+          33
+        ],
+        "days": [
+          16,
+          184,
+          278,
+          28
+        ],
+        "time": [
+          16,
+          241,
+          278,
+          33
+        ],
+        "prompt": [
+          16,
+          302,
+          278,
+          85
+        ],
+        "auto": [
+          16,
+          395,
+          278,
+          20
+        ],
+        "note": [
+          18,
+          423,
+          274,
+          32
+        ],
+        "save": [
+          203,
+          463,
+          91,
+          25
+        ]
+      },
+      "step": "Opens Schedule this Agent on data-reports, chooses Weekly on Monday, Wednesday and Friday, types instructions and shoots the form."
+    },
+    "agents-schedule-saved": {
+      "file": "agents-schedule-saved.webp",
+      "width": 310,
+      "height": 604,
+      "boxes": {
+        "row": [
+          16,
+          123,
+          278,
+          47
+        ],
+        "pause": [
+          233,
+          135,
+          24,
+          24
+        ],
+        "remove": [
+          263,
+          135,
+          24,
+          24
+        ],
+        "msg": [
+          20,
+          556,
+          270,
+          31
+        ]
+      },
+      "step": "Clicks Save schedule and shoots the schedule listed in the module with its pause and delete buttons."
+    },
+    "agents-fleet-grid": {
+      "file": "agents-fleet-grid.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "button": [
+          242,
+          819,
+          35,
+          29
+        ],
+        "name": [
+          711,
+          422,
+          96,
+          18
+        ],
+        "folder": [
+          813,
+          422,
+          61,
+          18
+        ],
+        "model": [
+          927,
+          421,
+          26,
+          20
+        ],
+        "stop": [
+          761,
+          446,
+          20,
+          20
+        ],
+        "approve": [
+          676,
+          594,
+          362,
+          38
+        ],
+        "input": [
+          709,
+          639,
+          290,
+          28
+        ],
+        "add": [
+          1247,
+          370,
+          67,
+          25
+        ]
+      },
+      "step": "Waits for the Docs writer lane to ask for approval, opens the Fleet and shoots the window with its lanes."
+    },
+    "agents-fleet-approval": {
+      "file": "agents-fleet-approval.webp",
+      "width": 376,
+      "height": 272,
+      "boxes": {
+        "ask": [
+          16,
+          197,
+          130,
+          17
+        ],
+        "allow": [
+          153,
+          193,
+          63,
+          25
+        ],
+        "session": [
+          221,
+          193,
+          73,
+          25
+        ],
+        "deny": [
+          299,
+          193,
+          61,
+          25
+        ]
+      },
+      "step": "Shoots the Docs writer lane's card with its approval question."
+    },
+    "agents-fleet-new": {
+      "file": "agents-fleet-new.webp",
+      "width": 750,
+      "height": 414,
+      "boxes": {
+        "folder": [
+          16,
+          69,
+          639,
+          30
+        ],
+        "browse": [
+          661,
+          71,
+          73,
+          25
+        ],
+        "name": [
+          16,
+          284,
+          718,
+          30
+        ],
+        "model": [
+          16,
+          339,
+          718,
+          29
+        ],
+        "spawn": [
+          665,
+          373,
+          69,
+          25
+        ]
+      },
+      "step": "Clicks + Agent in the Fleet and shoots the new-agent form, then closes it."
+    },
+    "agents-preview-lane": {
+      "file": "agents-preview-lane.webp",
+      "width": 376,
+      "height": 272,
+      "boxes": {
+        "chip": [
+          190,
+          69,
+          147,
+          35
+        ],
+        "transcript": [
+          7,
+          65,
+          350,
+          159
+        ],
+        "input": [
+          40,
+          231,
+          290,
+          28
+        ]
+      },
+      "step": "Starts a Mini Games lane in the sample workspace, prompts it for the penalty shootout page, and shoots its card once the preview chip says Preview ready."
+    },
+    "agents-preview-composer": {
+      "file": "agents-preview-composer.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "chip": [
+          1101,
+          56,
+          187,
+          52
+        ]
+      },
+      "step": "Closes the Fleet and shoots the composer's preview chip at the top right of the chat column."
+    },
+    "agents-preview-panel": {
+      "file": "agents-preview-panel.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "panel": [
+          662,
+          43,
+          778,
+          824
+        ],
+        "tab": [
+          807,
+          92,
+          131,
+          38
+        ],
+        "close": [
+          1397,
+          51,
+          32,
+          32
+        ]
+      },
+      "step": "Opens the Fleet, clicks the lane's preview chip, and shoots the Preview panel open on the lane's tab."
+    },
+    "agents-preview-worlds": {
+      "file": "agents-preview-worlds.webp",
+      "width": 660,
+      "height": 360,
+      "boxes": {
+        "chip": [
+          257,
+          114,
+          147,
+          35
+        ]
+      },
+      "step": "Opens Agent Worlds with motion reduced and shoots the Mini Games agent's preview chip over its node."
+    },
+    "agents-buddy-main": {
+      "file": "agents-buddy-main.webp",
+      "width": 1351,
+      "height": 298,
+      "boxes": {
+        "buddy": [
+          92,
+          116,
+          34,
+          25
+        ],
+        "name": [
+          65,
+          143,
+          89,
+          10
+        ],
+        "tip": [
+          8,
+          16,
+          248,
+          91
+        ]
+      },
+      "step": "Hovers Main's floating Agent over the composer and shoots it with its hover helper."
+    },
+    "agents-buddy-ideas": {
+      "file": "agents-buddy-ideas.webp",
+      "width": 352,
+      "height": 492,
+      "boxes": {
+        "buddy": [
+          316,
+          234,
+          31,
+          23
+        ],
+        "idea": [
+          17,
+          100,
+          274,
+          106
+        ],
+        "run": [
+          27,
+          172,
+          142,
+          25
+        ],
+        "ask": [
+          175,
+          172,
+          68,
+          25
+        ],
+        "more": [
+          17,
+          451,
+          72,
+          25
+        ]
+      },
+      "step": "Lets the Docs writer lane finish its turn, clicks its floating Agent in the Fleet, and shoots the ideas bubble."
+    },
+    "agents-buddy-hide": {
+      "file": "agents-buddy-hide.webp",
+      "width": 268,
+      "height": 152,
+      "boxes": {
+        "x": [
+          139,
+          101,
+          14,
+          14
+        ],
+        "brick": [
+          114,
+          107,
+          31,
+          23
+        ]
+      },
+      "step": "Hovers the Docs writer lane's floating Agent so its red x shows, shoots it, clicks the x and shoots the toast."
+    },
+    "agents-buddy-hidden": {
+      "file": "agents-buddy-hidden.webp",
+      "width": 364,
+      "height": 166,
+      "boxes": {
+        "undo": [
+          55,
+          115,
+          47,
+          25
+        ]
+      },
+      "step": "Hovers the Docs writer lane's floating Agent so its red x shows, shoots it, clicks the x and shoots the toast."
+    },
+    "agents-buddy-settings": {
+      "file": "agents-buddy-settings.webp",
+      "width": 1100,
+      "height": 760,
+      "boxes": {
+        "category": [
+          9,
+          292,
+          215,
+          30
+        ],
+        "card": [
+          248,
+          374,
+          836,
+          44
+        ],
+        "show": [
+          253,
+          428,
+          817,
+          53
+        ],
+        "auto": [
+          253,
+          491,
+          817,
+          53
+        ]
+      },
+      "step": "Opens Settings > Appearance > Floating Agents and shoots its two switches."
+    }
+  }
+}

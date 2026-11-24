@@ -1,0 +1,92 @@
+---
+title: Add an Agent
+description: Put any folder on the Agents rail with + Add agent, give it a name, and say what it will do.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+LUCID already shows the folders you work in as Agents. To put another folder on the rail, use **+ Add agent**. It takes two short steps, and nothing is added until you click **Add agent** at the end.
+
+## Before you start
+
+Have the right rail on its Agents view. See [Your Agents](/agents/).
+
+## Add a folder
+
+<Steps>
+
+1. At the bottom of your Agents, click the dashed box labeled **ADD AGENT**.
+
+   A small window opens beside it, titled **Add an Agent**. It explains what an Agent is: a mini Lucid that lives in one folder on this computer, such as an app's project or a set of documents. Everything it starts works inside that folder.
+
+   <Shot
+     id="agents-add-intro"
+     alt="The Add an Agent window beside the ADD AGENT box. Two short paragraphs explain what an Agent is. Under Recent folders is trip-photos, then Choose a folder…, and a Cancel button."
+     callouts={[
+       { box: "add", label: "The ADD AGENT box." },
+       { box: "about", label: "What an Agent is." },
+       { box: "recent", label: "A recent folder that is not on the rail yet. One click picks it." },
+       { box: "pick", label: "Choose a folder… opens your computer's folder window." },
+       { box: "cancel", label: "Cancel closes this window and adds nothing." },
+     ]}
+   />
+
+2. Pick the folder:
+
+   - Under **Recent folders**, click a folder. LUCID lists up to three folders you used recently that are not on the rail. This list only appears when there are some.
+   - Or click **Choose a folder…**. Your computer's folder window opens, titled **Choose a folder to add as an Agent**. Find the folder, then confirm.
+
+3. The window now shows the folder's path, and a name box that starts with the folder's name. To change the name, click the box and type. The old name is selected, so what you type replaces it.
+
+4. Under **What will this Agent do?**, click one choice:
+
+   - **Build or develop an application**
+   - **Analyze documents**
+   - **Research or data analysis**
+   - **Something else**
+
+   **Add agent** stays grayed out until you pick one.
+
+   <Shot
+     id="agents-add-purpose"
+     alt="The second step of Add an Agent. The name box reads Trip photos, with the folder path under it. Under What will this Agent do? are four choices, with Something else picked. At the bottom are Back and Add agent."
+     callouts={[
+       { box: "name", label: "The name. It starts as the folder's name." },
+       { box: "path", label: "The folder this Agent will work in." },
+       { box: "purposes", label: "The four choices start here." },
+       { box: "chosen", label: "The choice you picked is highlighted." },
+       { box: "back", label: "Back returns to the first step." },
+       { box: "add", label: "Add agent puts it on the rail." },
+     ]}
+   />
+
+5. Click **Add agent**.
+
+</Steps>
+
+The new Agent appears at the top of your Agents, and a note says, for example, **Trip photos is on your rail**.
+
+<Shot
+  id="agents-add-done"
+  alt="The top of the Agents rail. The first brick is the new Agent, labeled TRIP PHOTOS, above SAMPLE-PLATFORM and the others."
+  callouts={[{ box: "tile", label: "The new Agent, at the top." }]}
+/>
+
+To stop without adding anything, press **Esc**, click **Cancel**, or click anywhere outside the window.
+
+## What your choice changes
+
+The choice from step 4 shows as a line in the Agent's module, such as **Builds an application**, **Analyzes documents**, **Researches and analyzes data** or **General work**.
+
+When the main chat later moves into that folder, LUCID's folder setup already knows what the folder is for, so it does not ask that question again.
+
+<Aside type="tip">
+Adding a folder you removed earlier brings its Agent back to the rail.
+</Aside>
+
+## Next step
+
+<LinkCard title="Activate an Agent" href="/agents/activate-an-agent/" description="Start work in your new Agent's folder." />

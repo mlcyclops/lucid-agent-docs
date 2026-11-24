@@ -1,0 +1,95 @@
+---
+title: See what an agent built
+description: When an agent makes a web page, open it from the preview chip in the main chat, a Fleet card or Agent Worlds, and look at it in the Preview panel.
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+When an [agent](/glossary/#agent) makes a web page, such as a small game or a site, LUCID loads it out of sight first. If the page shows properly, a **preview chip** appears. Click the chip and the page opens in the **Preview panel**, where you can look at it and try it.
+
+A blank page or one that fails to load never gets a chip.
+
+## The preview chip
+
+The chip looks the same everywhere. While the page loads it says **Preparing preview**, with a small moving page picture. When the page is ready it says **Preview ready** and the page's name, with a tiny picture of the page.
+
+You find it in three places:
+
+- **The main chat:** at the top right of the chat column.
+- **A Fleet card:** in the upper right corner of the card's conversation. It floats over the text there and never covers the message box. On a narrow card it shows only the tiny picture.
+- **Agent Worlds:** above the agent that made the page.
+
+<Shot
+  id="agents-preview-composer"
+  alt="The main window with an empty chat. At the top right of the chat column is a chip that says Preview ready, Penalty Shootout, with a tiny picture of the page and a small x beside it."
+  callouts={[{ box: "chip", label: "The preview chip of the main chat." }]}
+/>
+
+<Shot
+  id="agents-preview-lane"
+  alt="The Mini Games card in the Fleet. In the upper right corner of its conversation, over the end of an HTML file, is a chip that says Preview ready, Penalty Shootout."
+  callouts={[
+    { box: "chip", label: "The card's preview chip, in the corner of its conversation." },
+    { box: "transcript", label: "The card's conversation. The chip floats over it." },
+    { box: "input", label: "The card's message box. The chip never covers it." },
+  ]}
+/>
+
+When more pages are waiting, the chip shows a count such as **+1**.
+
+## Open a page
+
+<Steps>
+
+1. Wait until the chip says **Preview ready**.
+
+2. Click the chip. The Preview panel swings out on the right, on its own tab for that page.
+
+   <Shot
+     id="agents-preview-panel"
+     alt="The Preview panel on the right half of the window showing a green penalty shootout game. Its tabs read Yours, Agent and Mini Games, with Mini Games selected. Buttons at the top include Reload, Device and Screenshot to chat, and an X at the far right."
+     callouts={[
+       { box: "panel", label: "The Preview panel, showing the page." },
+       { box: "tab", label: "The page's tab, named after the agent that made it." },
+       { box: "close", label: "Close the panel." },
+     ]}
+   />
+
+3. Try the page right in the panel. To make the panel wider or narrower, drag its left edge.
+
+4. Click the **X** at the top right to close the panel.
+
+</Steps>
+
+The page stays on its tab after you close the panel. To dismiss the main chat's chip without opening the page, click the small **x** beside it. Its note explains that a page that rendered stays on its Preview tab, and that you can open the panel from the rail any time.
+
+## Open a page from Agent Worlds
+
+In Agent Worlds, each agent that made a page has the chip above it. Main, the main chat, has one too when it made a page.
+
+<Shot
+  id="agents-preview-worlds"
+  alt="Agent Worlds. Above one agent's glass box is a chip that says Preview ready, Penalty Shootout. The agent's floating Agent, labeled MINI GAMES, stands to the left."
+  callouts={[{ box: "chip", label: "The agent's preview chip." }]}
+/>
+
+<Steps>
+
+1. Hover the chip. A card shows the page's title and where it is, an **Open preview** button, and the agent's recent snapshots of its pages, if it has any.
+
+2. Click the chip, **Open preview**, or a snapshot. The Preview panel flies out over Agent Worlds, which keeps running behind it.
+
+3. To slide the panel back, click its **X**, press **Esc**, or click the world. Press **Esc** again to close Agent Worlds.
+
+</Steps>
+
+<Aside type="tip">
+In Agent Worlds a floating Agent can stand over the chip. Drag the floating Agent aside. See [Floating Agents](/agents/floating-agents/#move-it-or-put-it-back).
+</Aside>
+
+## Next step
+
+<LinkCard title="Your Agents" href="/agents/" description="Back to the start of this section." />

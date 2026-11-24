@@ -1,0 +1,102 @@
+---
+title: Schedule an Agent
+description: Have an Agent start work on its own at a set time, once or on a repeat, and pause, resume or delete the schedule.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+You can tell an Agent to start work later, on its own: once on a date, or on a repeat such as every weekday. You write what it should do, and at that time LUCID starts an [agent](/glossary/#agent) in the Agent's folder and gives it your instructions.
+
+<Aside type="caution" title="LUCID must be open">
+A schedule runs only while LUCID is open on your computer. Minimized is fine. LUCID does not stay running in the background after you close it, so a closed LUCID cannot start a run. See [What happens at the scheduled time](#what-happens-at-the-scheduled-time).
+</Aside>
+
+## Make a schedule
+
+<Steps>
+
+1. On the right rail's Agents view, click the Agent. Its module opens with the **Activate** choices showing. See [Your Agents](/agents/) if the rail shows numbers instead.
+
+2. Click **Schedule this Agent**. Its second line says how many runs are scheduled and when the next one is, or "Run it later, or on a repeat" when there are none.
+
+   The module turns into a form.
+
+3. Choose when it repeats:
+
+   - **Once:** then pick the **Date**. It can be up to a year ahead.
+   - **Daily:** every day.
+   - **Weekdays:** Monday to Friday.
+   - **Weekly:** then click the **Days** you want. A highlighted day is on.
+   - **Monthly:** then pick the **Day of the month**, from 1 to 28, so every month has it.
+
+4. Set the **Time of day**.
+
+5. Under **Instructions or goal**, write what the Agent should do, and what counts as done.
+
+6. Leave **Approve its tool calls on its own during the run** off unless you are sure. When it is off, the agent waits for your [approval](/glossary/#approval) before each action that needs one, as it would if you were there.
+
+   The line under the form says when it will run, for example "Every Mon, Wed, Fri at 9:00 AM. Next: Wed, Nov 25, 9:00 AM." If something is missing, it says why instead.
+
+   <Shot
+     id="agents-schedule-form"
+     alt="The schedule form for the data-reports Agent. Weekly is selected, with Mon, Wed and Fri highlighted. Time of day is 09:00 AM. The instructions ask to update the weekly sales report. The approve box is unchecked. A line says Every Mon, Wed, Fri at 9:00 AM, the next run, and that LUCID must be open then. At the bottom are Back and Save schedule."
+     callouts={[
+       { box: "repeat", label: "When it repeats." },
+       { box: "days", label: "For Weekly, the days it runs." },
+       { box: "time", label: "The time of day." },
+       { box: "prompt", label: "What it should do." },
+       { box: "auto", label: "Off: you approve its actions yourself." },
+       { box: "note", label: "When it will run." },
+       { box: "save", label: "Save schedule." },
+     ]}
+   />
+
+7. Click **Save schedule**.
+
+</Steps>
+
+A green line confirms it, for example **Scheduled: Every Mon, Wed, Fri at 9:00 AM.** The schedule now appears at the top of the form.
+
+<Shot
+  id="agents-schedule-saved"
+  alt="The schedule form after saving. At the top, a row reads Every Mon, Wed, Fri at 9:00 AM, Next Wed, Nov 25, 9:00 AM, with a pause button and a delete button. At the bottom, a green line says Scheduled: Every Mon, Wed, Fri at 9:00 AM."
+  callouts={[
+    { box: "row", label: "The schedule and its next run." },
+    { box: "pause", label: "Pause this schedule." },
+    { box: "remove", label: "Delete this schedule." },
+    { box: "msg", label: "The confirmation." },
+  ]}
+/>
+
+The form stays open, so you can add another schedule for the same Agent. Click **Back** to return to the module.
+
+## Pause, resume or delete a schedule
+
+<Steps>
+
+1. Click the Agent, then click **Schedule this Agent**. Its schedules are listed at the top of the form.
+
+2. On the schedule's row:
+
+   - Click the **pause** button to stop it for now. The row then says **Paused**.
+   - On a paused row, click the **play** button to resume it.
+   - Click the **trash** button to delete it.
+
+</Steps>
+
+## What happens at the scheduled time
+
+If LUCID is open, it starts an agent in the Agent's folder, or wakes the one already there, and sends it your instructions. You can follow its work in the [Fleet](/glossary/#fleet). See [Run agents side by side](/agents/run-agents-side-by-side/).
+
+If LUCID was closed, or your computer was asleep, at that time, the run is missed. If LUCID is running again less than two hours later, it does the missed run once to catch up. Later than that, the run is skipped. A one-time schedule that was skipped says **Missed (LUCID was closed)** on its row.
+
+<Aside type="tip">
+When at least one schedule exists, the right rail's Metrics view also shows a tile for all scheduled jobs.
+</Aside>
+
+## Next step
+
+<LinkCard title="Run agents side by side" href="/agents/run-agents-side-by-side/" description="Watch and steer several agents at once in the Fleet." />

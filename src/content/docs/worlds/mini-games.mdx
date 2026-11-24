@@ -1,0 +1,86 @@
+---
+title: Mini games
+description: Play a world's sample mini game, or have an agent build one, and see how LUCID checks and seals it off before it runs.
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+Each world comes with up to three **mini game** ideas. Many come with a ready-made **sample** you can play right away. You can also ask an agent to build the game: its subagents build it on a glowing scaffold beside it, and the finished game appears as a small button over the agent.
+
+Every game, sample or agent-built, is treated as untrusted. Before it can run, LUCID's security gate checks it. A game the gate blocks is never shown, and the reason is recorded, the same way a blocked tool call is [quarantined](/glossary/#quarantine). A game that passes runs in a [sandbox](/glossary/#sandbox): it has no internet, cannot save anything, and cannot reach LUCID, your files or your keys.
+
+Without a world, Visualize offers two games of its own: **Target tap game** and **Memory cards game**.
+
+<Aside>
+The pictures on this page come from LUCID's built-in demo team in the Christmas world, so they say **DEMO**. In the demo, **Build** is switched off, because the demo agents are not real.
+</Aside>
+
+## Play a sample
+
+<Steps>
+
+1. In Visualize, click an agent's figure, or Main in the middle. Its panel opens.
+
+2. Under **Mini game**, find the game, and click **Play sample**.
+
+   <Shot
+     id="worlds-node-panel"
+     alt="A demo agent's panel in the Christmas world. Under Mini game are three rows: Toy Line Sorter and Sleigh Route, each with Build and Play sample, and Wrap and Match with Build only."
+     callouts={[
+       { box: "games", label: "The world's mini games. Play sample is there when a game has a sample." },
+       { box: "look", label: "Customize look. See Cast and quality." },
+     ]}
+   />
+
+3. A game card opens and LUCID first checks the game with its security gate. The card says **Checking it with the security gate...**, then **Passed the security gate**. Nothing runs yet.
+
+   <Shot
+     id="worlds-game-gate"
+     alt="A game card titled Toy Line Sorter with the tags Untrusted, Sample and Demo. A line says: Passed the security gate. A ready-made sample: it still runs untrusted, sandboxed, with no network and no access to LUCID. The game area says Nothing runs until you press Play. Below are Play, Keep and Discard."
+     callouts={[
+       { box: "tags", label: "Untrusted: it runs sealed off. Sample: a ready-made example, not built by an agent." },
+       { box: "status", label: "What the security gate decided." },
+       { box: "stage", label: "Nothing runs until you press Play." },
+       { box: "play", label: "Play starts the game." },
+       { box: "keep", label: "Keep puts the game on the agent for this session." },
+       { box: "discard", label: "Discard throws it away." },
+     ]}
+   />
+
+4. Click **Play**. The game starts in the card.
+
+   <Shot
+     id="worlds-game-playing"
+     alt="The Toy Line Sorter game running in the card: a toy factory belt with three bins labeled Trains, Teddies and Drums, and a start screen with a green Play (Space) button."
+     callouts={[
+       { box: "stage", label: "The game runs here, sealed off from LUCID." },
+       { box: "restart", label: "Play became Restart: it starts the game over." },
+     ]}
+   />
+
+5. To make the game bigger or smaller, drag the corner at the bottom right of the card, or use the arrow keys on it. Close the card with the **X** at the top right.
+
+</Steps>
+
+## Have an agent build a game
+
+<Steps>
+
+1. Click a working agent's figure, or Main.
+
+2. Under **Mini game**, click **Build** next to the game you want. LUCID sends the agent the game's instructions as an ordinary task. If the agent is busy, the task waits until its current turn ends.
+
+3. Watch the scaffold rise beside the agent as its subagents work. A finished step locks in with a flash. A failed step flickers red.
+
+4. When the agent finishes, a small button with the game's name appears over it. Click it. The same game card opens, and the game goes through the same security gate and the same sandbox as a sample.
+
+</Steps>
+
+If the gate blocks the game, the card says **Not shown**, followed by the reason, and the game never runs.
+
+## Next step
+
+<LinkCard title="Lucid Agent Worlds" href="/worlds/" description="Back to the overview of Agent Worlds." />

@@ -1,0 +1,134 @@
+---
+title: Open Agent Worlds
+description: Open the Visualize view, switch a world on, look around in 2D or 3D, and close it again.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+Agent Worlds live in a view called **Visualize**. It shows the main chat, which LUCID calls **Main**, in the middle, and each [agent](/glossary/#agent) of your [Fleet](/glossary/#fleet) around it. Small figures near an agent are its **subagents**: helpers it starts for part of a task.
+
+Opening Visualize never changes what your agents are doing. It only watches them.
+
+<Aside>
+The pictures on this page come from a demo team built into LUCID for testing. That is why they say **DEMO**. Your own view shows your own agents.
+</Aside>
+
+## Open Visualize
+
+<Steps>
+
+1. Below the message box, find the row of small round buttons. Click the last one, the **Visualize** button.
+
+   <Shot
+     id="worlds-open-button"
+     alt="The message box with its row of tool buttons underneath. The last button, Visualize, shows a small orbit icon."
+     callouts={[{ box: "viz", label: "The Visualize button." }]}
+   />
+
+2. Visualize opens over the window. Along the top is a row of controls.
+
+   <Shot
+     id="worlds-header"
+     alt="The Visualize controls: 2D and 3D, then Anime, Professional and Worlds, then Auto camera, a Fit button, View, Record, Recordings and a close X."
+     callouts={[
+       { box: "view", label: "2D or 3D." },
+       { box: "anime", label: "Anime: a built-in style." },
+       { box: "pro", label: "Professional: the other built-in style." },
+       { box: "worlds", label: "Worlds: your installed worlds." },
+       { box: "auto", label: "Auto camera follows the action." },
+       { box: "fit", label: "Fit brings everyone back into view." },
+       { box: "viewmenu", label: "View: layout, quality and approval settings." },
+       { box: "close", label: "Close Visualize. Your agents keep running." },
+     ]}
+   />
+
+</Steps>
+
+You can also start here from the **Agents** view of the right rail: click an Agent's box, click **Activate**, then **Agent World session**. LUCID starts a new agent in that folder and opens it in Visualize with its message box ready.
+
+## Pick a style or a world
+
+Visualize starts in a built-in style. **Anime** shows each agent as a mini Lucid in a glass cube. **Professional** shows office workers at their desks, with Main as the boss in the middle.
+
+<Shot
+  id="worlds-visualize-pro"
+  alt="Visualize in 3D in the Professional style: office workers at desks around Main in the middle, joined by thin lines of light, on a dark starry background."
+  callouts={[{ box: "pro", label: "Professional is selected." }]}
+/>
+
+To use a world instead:
+
+<Steps>
+
+1. Click **Worlds**. A menu lists the worlds installed on this computer.
+
+   <Shot
+     id="worlds-menu"
+     alt="The Worlds menu open under the Worlds button. It lists Basketball, Christmas and Soccer, each with Export..., and two buttons at the bottom: Import world file... and Get more worlds."
+     callouts={[
+       { box: "worlds", label: "The Worlds button." },
+       { box: "pick", label: "Click a world's name to switch to it." },
+       { box: "import", label: "Import world file... installs a world file you saved on another computer." },
+       { box: "store", label: "Get more worlds opens the store." },
+     ]}
+   />
+
+   A world you have not bought on this account shows **Get** with a lock. Clicking it opens the store.
+
+2. Click a world's name. The scene redraws in that world, and the **Worlds** button now shows the world's name.
+
+   <Shot
+     id="worlds-christmas"
+     alt="Visualize in the Christmas world: a snowy scene with Santa in the middle and elves around him, joined by red and green streams. A row of role names runs along the bottom left, and a tray of throwables with Blizzard sits at the bottom center."
+     callouts={[
+       { box: "worlds", label: "The button shows the world in use: Christmas." },
+       { box: "legend", label: "The roles of the agents in the scene." },
+       { box: "storm", label: "The world's three throwables and its storm." },
+     ]}
+   />
+
+</Steps>
+
+LUCID remembers your choice. The next time you open Visualize, it opens in the same world.
+
+No worlds yet? See [Get worlds](/worlds/get-worlds/).
+
+## Look around
+
+**In 3D**, drag to turn the scene, right-drag to slide it, and scroll to zoom.
+
+**In 2D**, you see the scene from above, like a map. Drag to slide it and scroll to zoom.
+
+<Shot
+  id="worlds-visualize-2d"
+  alt="Visualize in 2D in the Anime style: square tiles for Main in the middle and the agents around it, joined by glowing lines, seen from above."
+  callouts={[
+    { box: "view", label: "2D is selected." },
+    { box: "style", label: "The style and world choices." },
+    { box: "auto", label: "Auto camera, here switched off." },
+    { box: "fit", label: "Fit." },
+    { box: "viewmenu", label: "View." },
+    { box: "close", label: "Close." },
+  ]}
+/>
+
+**Auto camera** moves the camera for you. It glides to the agent working hardest. As soon as you drag, slide or zoom, Auto camera switches off so you keep control. Tick it again to hand the camera back.
+
+**Fit** (the target button) brings every figure back into view. It also switches Auto camera off.
+
+Under **View**, **Layout** offers two arrangements: **Orbit** puts the agents on a ring around Main, and **Constellation** spreads them around Main in 3D.
+
+## Talk to an agent
+
+Click a figure to open its panel beside it. The panel shows what the agent did last, buttons such as **Stop turn**, **End agent** and **Kill**, and a message box. Type there to send that agent a message. Press **Esc**, or click an empty spot, to close the panel.
+
+## Close Visualize
+
+Click the **X** at the top right, or press **Esc**. Your agents keep working.
+
+## Next step
+
+<LinkCard title="Approve from inside a world" href="/worlds/approvals-in-worlds/" description="Answer an agent's request without leaving the scene." />

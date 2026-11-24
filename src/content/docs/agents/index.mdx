@@ -1,0 +1,150 @@
+---
+title: Your Agents
+description: Meet the Agents view on the right rail, where each folder you work in is a small Lucid you can color, rename, start and remove.
+sidebar:
+  order: 0
+---
+
+import { Steps, Aside, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+An [agent](/glossary/#agent) is an AI that can take actions, such as reading and editing files. LUCID works in folders on your computer, and on the right rail it shows each folder you work in as an **Agent**: a mini Lucid in a glass brick. Everything an Agent starts works inside its folder.
+
+An Agent lights up while any agent is working in its folder, whether that is the main chat or one of the agents in your [Fleet](/glossary/#fleet).
+
+## Open the Agents view
+
+The right rail is the narrow column on the right edge of the window. It has two views: **Agents** and **Metrics**. On a new install it opens on Agents.
+
+<Shot
+  id="agents-rail"
+  alt="The LUCID window. On the right rail, under a small Lucid button at the top, is a column of glass bricks named SAMPLE-PLATFORM, WEBSITE, DOCS-SITE and DATA-REPORTS, then a dashed ADD AGENT box. The DOCS-SITE brick is bright and the others are dimmer."
+  callouts={[
+    { box: "rail", label: "The right rail, on its Agents view." },
+    { box: "toggle", label: "The toggle between Agents and Metrics." },
+    { box: "work", label: "An Agent whose folder has an agent at work. It stays bright and its Lucid types." },
+    { box: "idle", label: "An idle Agent. Its Lucid sits still." },
+    { box: "add", label: "Add agent, to add a folder yourself. See Add an Agent." },
+  ]}
+/>
+
+<Steps>
+
+1. If the right side shows a wide panel instead of a narrow rail, click the button at the top of that panel whose hover text says **Collapse to metrics**.
+
+2. At the top of the rail, click the button with the small Lucid. When you hover it, its note is titled **Agents** and says "Show your Agents: one Lucid per folder you work in".
+
+   The rail shows your Agents.
+
+3. To go back to the numbers, click the same button again. Its note is now titled **Metrics** and says "Back to the live metrics".
+
+   <Shot
+     id="agents-metrics"
+     alt="The right rail on its Metrics view: tiles for savings, average per turn, context, turns, lines, findings and quarantined calls, under the small Lucid button."
+     callouts={[
+       { box: "toggle", label: "The same button switches back to Agents." },
+       { box: "tiles", label: "The Metrics view: live numbers for your work." },
+     ]}
+   />
+
+</Steps>
+
+LUCID remembers which view you chose.
+
+## Where Agents come from
+
+You do not have to set Agents up. LUCID adds one for:
+
+- the folder the main chat works in;
+- folders you opened recently;
+- the folder of each agent in your Fleet.
+
+You can also add any folder yourself. See [Add an Agent](/agents/add-an-agent/).
+
+Each Agent is named after its folder. When two folders have the same name, the name shows the folder above it too, such as `alpha/api` and `beta/api`.
+
+## What an Agent shows
+
+- **Working:** while any agent works in its folder, the brick stays bright and its Lucid types.
+- **Idle:** its Lucid meditates and the brick rests a little dimmer. Hover the rail to brighten every brick.
+- **Turn ended:** when an agent in its folder finishes a turn, a ring plays around the brick in its color.
+
+## Put Agents in your order
+
+New Agents appear at the top. To change the order:
+
+- **Drag** an Agent up or down. The other Agents look at it as it passes, and LUCID keeps your order.
+- With the keyboard, click an Agent, then press **Alt+Up** or **Alt+Down** to move it.
+
+When there are more Agents than fit, thin arrows appear above and below them. Click an arrow to move three Agents, double-click it to move a whole page, or use your mouse wheel.
+
+## The Agent's module
+
+Hover an Agent to open its module beside the rail. Click the Agent instead to open it with the **Activate** choices already open.
+
+<Shot
+  id="agents-module"
+  alt="A panel beside the WEBSITE Agent. At the top: the Agent's picture, its name website, its folder path and the line Meditating · idle. Below: Color, with a rainbow slider and six round color presets. Then Rename, Activate and Remove from rail."
+  callouts={[
+    { box: "tile", label: "The Agent you hovered." },
+    { box: "name", label: "The Agent's name. The folder path is under it." },
+    { box: "state", label: "What it is doing, such as Meditating · idle, or Typing · Main composer." },
+    { box: "hue", label: "Slide to pick any color." },
+    { box: "color", label: "Or click a preset color." },
+    { box: "rename", label: "Rename the Agent." },
+    { box: "activate", label: "Activate: start work in this folder." },
+    { box: "remove", label: "Remove the Agent from the rail." },
+  ]}
+/>
+
+Press **Esc** to close the module.
+
+### Change its color
+
+Click one of the preset colors, or drag the color slider. The brick changes color at once, and LUCID keeps it.
+
+### Rename it
+
+<Steps>
+
+1. Open the Agent's module and click **Rename**.
+
+2. Type the new name.
+
+3. Press **Enter** to save it, or **Esc** to keep the old name.
+
+</Steps>
+
+Renaming changes only the name on the rail. Your folder keeps its name.
+
+### Remove it from the rail
+
+<Steps>
+
+1. Open the Agent's module and click **Remove from rail**.
+
+2. LUCID asks **Remove?** Click **Yes** to remove it, or **Cancel** to keep it.
+
+   <Shot
+     id="agents-remove-confirm"
+     alt="The Agent's module with the Activate choices open. At the bottom, Remove? is followed by a red Yes button and a Cancel button."
+     callouts={[
+       { box: "yes", label: "Yes removes the Agent from the rail." },
+       { box: "no", label: "Cancel keeps it." },
+     ]}
+   />
+
+3. A note says **Agent removed**. To bring it back right away, click **Undo** in that note.
+
+</Steps>
+
+Removing an Agent only takes it off the rail. Your folder and its files stay as they are, and a removed folder does not come back on its own. To show it again later, add it with **+ Add agent**.
+
+## Next steps
+
+<CardGrid>
+  <LinkCard title="Add an Agent" href="/agents/add-an-agent/" description="Add any folder to the rail and say what it is for." />
+  <LinkCard title="Activate an Agent" href="/agents/activate-an-agent/" description="Start work in an Agent's folder." />
+  <LinkCard title="Schedule an Agent" href="/agents/schedule-an-agent/" description="Run an Agent later, or on a repeat." />
+  <LinkCard title="Run agents side by side" href="/agents/run-agents-side-by-side/" description="Use the Fleet to run several agents at once." />
+</CardGrid>

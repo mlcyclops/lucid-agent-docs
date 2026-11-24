@@ -1,0 +1,119 @@
+---
+title: Run agents side by side
+description: Open the Fleet to run several agents at once, each in its own card with its own folder and model, and answer or stop each one.
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+The [Fleet](/glossary/#fleet) runs several [agents](/glossary/#agent) at the same time. Each agent gets its own card, sometimes called a lane: its own conversation, its own message box, its own folder and its own model. While one agent writes, another can test, and you can watch them all.
+
+## Open the Fleet
+
+<Steps>
+
+1. In the row of small buttons under the main message box, click the lightning bolt. Its hover note is titled **LUCID Fleet - hub and agents**.
+
+2. The **LUCID Fleet** panel opens, with one card per agent. Click the lightning bolt again to close it. The agents keep working while it is closed.
+
+</Steps>
+
+<Shot
+  id="agents-fleet-grid"
+  alt="The LUCID Fleet panel over the lower right of the window, with three cards: Docs writer, website and data-reports. The Docs writer card is red and asks for approval of a command, with Allow, Session and Deny buttons. The panel's header has a Next that needs you button, Ask, + Agent and More."
+  callouts={[
+    { box: "button", label: "The lightning bolt opens and closes the Fleet." },
+    { box: "name", label: "The agent's name. Its dot shows its state." },
+    { box: "folder", label: "The folder this agent works in." },
+    { box: "model", label: "The model this agent uses." },
+    { box: "stop", label: "Stop this agent." },
+    { box: "approve", label: "This agent is waiting for your answer." },
+    { box: "input", label: "Type a prompt for this agent here." },
+    { box: "add", label: "+ Agent starts a new agent." },
+  ]}
+/>
+
+## Start a new agent
+
+<Steps>
+
+1. In the Fleet's header, click **+ Agent**.
+
+   A **New agent** card opens at the start of the grid.
+
+   <Shot
+     id="agents-fleet-new"
+     alt="The New agent form. A Folder box holds the path of the sample-platform folder, with a Browse button. Below are Find repos options, Clone from a URL, an Own worktree checkbox, an optional Name box, a Model list, and a Spawn button."
+     callouts={[
+       { box: "folder", label: "Folder: where the agent works. It starts as the main chat's folder." },
+       { box: "browse", label: "Browse to pick another folder." },
+       { box: "name", label: "A name for the agent. Optional." },
+       { box: "model", label: "The model it will use." },
+       { box: "spawn", label: "Spawn starts the agent." },
+     ]}
+   />
+
+2. Check the **Folder**. To use another folder, click **Browse**, or type its path.
+
+3. Optional: type a **Name**, so you can tell the cards apart.
+
+4. Pick the **Model**.
+
+5. Click **Spawn**. Close the form without starting anything with the **X** in its header.
+
+</Steps>
+
+You can also start an agent from an Agent on the right rail. See [Activate an Agent](/agents/activate-an-agent/).
+
+<Aside type="note">
+The form also has **Own worktree**. A worktree is a separate copy of your [repository](/glossary/#repository) on its own branch, so this agent can change files without getting in the way of others in the same folder. Merging its work back later can conflict.
+</Aside>
+
+## Give an agent a task
+
+Click the card's message box, which says **Prompt this agent…**, type what it should do, and press **Enter**. Its work shows in the card above the message box.
+
+While it works, a **Cancel** button next to the message box ends the current turn. The agent stays ready for your next prompt.
+
+## Change an agent's model
+
+Each card has its own model list in its header. Pick another model there. The other agents keep theirs.
+
+## Answer an approval
+
+An agent may need your [approval](/glossary/#approval) before an action, such as running a command. Its card turns red, and a bar above the message box shows what it wants to do.
+
+<Shot
+  id="agents-fleet-approval"
+  alt="The Docs writer card, outlined in red. Above its message box, a bar shows the command bash git tag -s v2.4.0 -m and three buttons: Allow, Session and Deny."
+  callouts={[
+    { box: "ask", label: "What the agent wants to do." },
+    { box: "allow", label: "Allow: yes, this once." },
+    { box: "session", label: "Session: yes to this and every same-kind request for the rest of this agent's session." },
+    { box: "deny", label: "Deny: no. The agent carries on without it." },
+  ]}
+/>
+
+When several agents wait, the header shows **Next that needs you** with a count. Click it to jump to the next one.
+
+<Aside type="caution">
+The lightning button in a card's header turns on **Full auto-mode**, which approves every request from that agent on its own. Leave it off unless you are sure.
+</Aside>
+
+## Stop an agent
+
+<Steps>
+
+1. Click the **X** at the right end of the card's header. Its hover note says "Stop the agent."
+
+2. The agent stops. The card stays, so you can still read what it did.
+
+3. To remove the card, click the **X** again. The agent's history stays on your computer.
+
+</Steps>
+
+## Next step
+
+<LinkCard title="Floating Agents" href="/agents/floating-agents/" description="Meet the small Agent that rides on each card and suggests ideas." />

@@ -1,0 +1,44 @@
+---
+// A narrated or captioned film with its transcript printed underneath (ADR-0660 step 6). Files live in
+// public/videos/: <name>.mp4, <name>.vtt (captions, required) and <name>-poster.webp. The transcript is read from
+// the captions at build time, so it is searchable and never drifts from what the film says.
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+
+interface Props {
+  /** Base file name under public/videos/, without extension. */
+  name: string;
+  /** What the film shows, for the accessible name and the heading of the transcript. */
+  title: string;
+  /** One sentence under the film. */
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+
+const { name, title, caption, width = 1280, height = 720 } = Astro.props;
+const dir = join(process.cwd(), "public", "videos");
+for (const ext of [".mp4", ".vtt", "-poster.webp"]) {
+  if (!existsSync(join(dir, name + ext))) throw new Error(`Video "${name}": public/videos/${name}${ext} is missing`);
+}
+// WebVTT cues: drop the header, cue ids, timings and tags; keep the spoken lines in order without repeats.
+const lines: string[] = [];
+for (const block of readFileSync(join(dir, `${name}.vtt`), "utf8").replace(/\r/g, "").split(/\n\n+/)) {
+  const text = block.split("\n").filter((l) => l && !/-->/.test(l) && !/^WEBVTT/.test(l) && !/^(NOTE|STYLE|REGION)\b/.test(l) && !/^\d+$/.test(l))
+    .map((l) => l.replace(/<[^>]+>/g, "").trim()).join(" ").trim();
+  if (text && lines[lines.length - 1] !== text) lines.push(text);
+}
+if (!lines.length) throw new Error(`Video "${name}": its captions have no text`);
+---
+
+<figure class="vid not-content">
+  <video controls preload="none" playsinline poster={`/videos/${name}-poster.webp`} width={width} height={height} aria-label={title}>
+    <source src={`/videos/${name}.mp4`} type="video/mp4" />
+    <track kind="captions" src={`/videos/${name}.vtt`} srclang="en" label="English" default />
+  </video>
+  {caption && <figcaption>{caption}</figcaption>}
+  <details class="vid-transcript">
+    <summary>Transcript: {title}</summary>
+    {lines.map((l) => <p>{l}</p>)}
+  </details>
+</figure>
