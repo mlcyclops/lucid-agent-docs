@@ -63,6 +63,15 @@ for (const name of existsSync(SHOTS) ? readdirSync(SHOTS).filter((n) => n.endsWi
   }
 }
 
+// A shot file no manifest names is a leftover from an older capture: it ships without anyone checking it.
+const named = new Set();
+for (const name of existsSync(SHOTS) ? readdirSync(SHOTS).filter((n) => n.endsWith(".json")) : []) {
+  for (const shot of Object.values(JSON.parse(readFileSync(join(SHOTS, name), "utf8")).shots)) named.add(shot.file);
+}
+for (const file of readdirSync(join(ROOT, "public", "shots"))) {
+  if (!named.has(file)) problems.push(`public/shots/${file} is in no src/shots/*.json manifest (a leftover capture)`);
+}
+
 if (problems.length) {
   console.error(`check-dist: ${problems.length} problem(s)\n` + problems.map((p) => `  - ${p}`).join("\n"));
   process.exit(1);

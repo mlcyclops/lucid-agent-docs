@@ -27,6 +27,8 @@ export default defineConfig({
       sidebar: [
         { label: "Get started", items: [{ autogenerate: { directory: "get-started" } }] },
         { label: "Connect your apps and AI", items: [{ autogenerate: { directory: "connect" } }] },
+        { label: "Agents and Fleet", items: [{ autogenerate: { directory: "agents" } }] },
+        { label: "Lucid Agent Worlds", items: [{ autogenerate: { directory: "worlds" } }] },
         { label: "Glossary", link: "/glossary/" },
       ],
       plugins: [starlightLinksValidator({ errorOnLocalLinks: true })],

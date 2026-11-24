@@ -1,0 +1,578 @@
+{
+  "module": "worlds",
+  "capturedAt": "2026-11-24T15:47:42.948Z",
+  "shots": {
+    "worlds-open-button": {
+      "file": "worlds-open-button.webp",
+      "width": 994,
+      "height": 127,
+      "boxes": {
+        "viz": [
+          229,
+          83,
+          35,
+          29
+        ]
+      },
+      "step": "Shoots the Visualize button in the message box's tools."
+    },
+    "worlds-visualize-2d": {
+      "file": "worlds-visualize-2d.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "view": [
+          701,
+          52,
+          71,
+          27
+        ],
+        "style": [
+          782,
+          52,
+          192,
+          27
+        ],
+        "auto": [
+          984,
+          53,
+          101,
+          25
+        ],
+        "fit": [
+          1095,
+          54,
+          31,
+          23
+        ],
+        "viewmenu": [
+          1136,
+          53,
+          61,
+          25
+        ],
+        "close": [
+          1393,
+          54,
+          31,
+          23
+        ]
+      },
+      "step": "Opens Visualize on the built-in Anime style, switches to 2D, fits the view and shoots the whole window and the header controls."
+    },
+    "worlds-header": {
+      "file": "worlds-header.webp",
+      "width": 744,
+      "height": 48,
+      "boxes": {
+        "view": [
+          11,
+          10,
+          71,
+          27
+        ],
+        "anime": [
+          93,
+          11,
+          52,
+          25
+        ],
+        "pro": [
+          145,
+          11,
+          81,
+          25
+        ],
+        "worlds": [
+          226,
+          11,
+          56,
+          25
+        ],
+        "auto": [
+          294,
+          11,
+          101,
+          25
+        ],
+        "fit": [
+          405,
+          12,
+          31,
+          23
+        ],
+        "viewmenu": [
+          446,
+          11,
+          61,
+          25
+        ],
+        "close": [
+          703,
+          12,
+          31,
+          23
+        ]
+      },
+      "step": "Opens Visualize on the built-in Anime style, switches to 2D, fits the view and shoots the whole window and the header controls."
+    },
+    "worlds-visualize-pro": {
+      "file": "worlds-visualize-pro.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "pro": [
+          835,
+          53,
+          81,
+          25
+        ]
+      },
+      "step": "Switches to 3D and the built-in Professional style and shoots the whole window."
+    },
+    "worlds-menu": {
+      "file": "worlds-menu.webp",
+      "width": 391,
+      "height": 265,
+      "boxes": {
+        "worlds": [
+          12,
+          12,
+          56,
+          25
+        ],
+        "pick": [
+          35,
+          121,
+          270,
+          28
+        ],
+        "import": [
+          27,
+          214,
+          133,
+          25
+        ],
+        "store": [
+          166,
+          214,
+          123,
+          25
+        ]
+      },
+      "step": "Opens the Worlds menu with three imported worlds and shoots it, then picks Christmas."
+    },
+    "worlds-christmas": {
+      "file": "worlds-christmas.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "worlds": [
+          902,
+          53,
+          70,
+          25
+        ],
+        "storm": [
+          738,
+          853,
+          79,
+          28
+        ],
+        "legend": [
+          14,
+          864,
+          552,
+          22
+        ]
+      },
+      "step": "Opens the Worlds menu with three imported worlds and shoots it, then picks Christmas."
+    },
+    "worlds-view-menu": {
+      "file": "worlds-view-menu.webp",
+      "width": 365,
+      "height": 234,
+      "boxes": {
+        "layout": [
+          13,
+          34,
+          147,
+          30
+        ],
+        "quality": [
+          13,
+          113,
+          223,
+          27
+        ],
+        "fly": [
+          334,
+          198,
+          16,
+          16
+        ]
+      },
+      "step": "Opens the View menu in the Christmas world and shoots Layout, Quality, Approvals and World options, then the Cast section."
+    },
+    "worlds-cast-fleet": {
+      "file": "worlds-cast-fleet.webp",
+      "width": 352,
+      "height": 505,
+      "boxes": {
+        "mode": [
+          7,
+          47,
+          187,
+          30
+        ],
+        "skin": [
+          7,
+          125,
+          322,
+          34
+        ],
+        "undertone": [
+          7,
+          167,
+          170,
+          30
+        ],
+        "hair": [
+          7,
+          245,
+          258,
+          66
+        ],
+        "style": [
+          7,
+          359,
+          340,
+          95
+        ]
+      },
+      "step": "Opens the View menu in the Christmas world and shoots Layout, Quality, Approvals and World options, then the Cast section."
+    },
+    "worlds-node-panel": {
+      "file": "worlds-node-panel.webp",
+      "width": 373,
+      "height": 430,
+      "boxes": {
+        "look": [
+          220,
+          161,
+          102,
+          32
+        ],
+        "games": [
+          28,
+          198,
+          317,
+          145
+        ]
+      },
+      "step": "Clicks a demo agent's figure in the Christmas world, shoots its panel, then opens Customize look and shoots it."
+    },
+    "worlds-cast-one": {
+      "file": "worlds-cast-one.webp",
+      "width": 380,
+      "height": 420,
+      "boxes": {
+        "presentation": [
+          16,
+          35,
+          266,
+          30
+        ],
+        "skin": [
+          16,
+          113,
+          322,
+          34
+        ],
+        "auto": [
+          317,
+          79,
+          38,
+          20
+        ]
+      },
+      "step": "Clicks a demo agent's figure in the Christmas world, shoots its panel, then opens Customize look and shoots it."
+    },
+    "worlds-cast-one-reset": {
+      "file": "worlds-cast-one-reset.webp",
+      "width": 380,
+      "height": 420,
+      "boxes": {
+        "hair": [
+          16,
+          279,
+          340,
+          95
+        ],
+        "reset": [
+          16,
+          382,
+          110,
+          25
+        ],
+        "note": [
+          16,
+          417,
+          340,
+          17
+        ]
+      },
+      "step": "Clicks a demo agent's figure in the Christmas world, shoots its panel, then opens Customize look and shoots it."
+    },
+    "worlds-game-gate": {
+      "file": "worlds-game-gate.webp",
+      "width": 674,
+      "height": 553,
+      "boxes": {
+        "tags": [
+          416,
+          18,
+          205,
+          22
+        ],
+        "status": [
+          17,
+          53,
+          640,
+          35
+        ],
+        "stage": [
+          17,
+          98,
+          640,
+          400
+        ],
+        "play": [
+          17,
+          508,
+          58,
+          30
+        ],
+        "keep": [
+          83,
+          508,
+          62,
+          30
+        ],
+        "discard": [
+          153,
+          508,
+          75,
+          30
+        ]
+      },
+      "step": "Presses Play sample on the agent's first mini game, shoots the popup after the security gate passed it, then presses Play and shoots the running game."
+    },
+    "worlds-game-playing": {
+      "file": "worlds-game-playing.webp",
+      "width": 674,
+      "height": 553,
+      "boxes": {
+        "stage": [
+          17,
+          98,
+          640,
+          400
+        ],
+        "restart": [
+          17,
+          508,
+          72,
+          30
+        ]
+      },
+      "step": "Presses Play sample on the agent's first mini game, shoots the popup after the security gate passed it, then presses Play and shoots the running game."
+    },
+    "worlds-approval-badge": {
+      "file": "worlds-approval-badge.webp",
+      "width": 1440,
+      "height": 900,
+      "boxes": {
+        "badge": [
+          724,
+          301,
+          29,
+          28
+        ],
+        "pill": [
+          505,
+          102,
+          430,
+          30
+        ]
+      },
+      "step": "Waits for a DEMO approval ask in the Christmas world, shoots its badge and the triage pill, opens the badge's pop-out, then the triage list."
+    },
+    "worlds-approval-popout": {
+      "file": "worlds-approval-popout.webp",
+      "width": 386,
+      "height": 172,
+      "boxes": {
+        "badge": [
+          16,
+          52,
+          29,
+          28
+        ],
+        "approve": [
+          62,
+          114,
+          95,
+          30
+        ],
+        "auto": [
+          163,
+          114,
+          95,
+          30
+        ],
+        "deny": [
+          263,
+          114,
+          95,
+          30
+        ]
+      },
+      "step": "Waits for a DEMO approval ask in the Christmas world, shoots its badge and the triage pill, opens the badge's pop-out, then the triage list."
+    },
+    "worlds-approval-strip": {
+      "file": "worlds-approval-strip.webp",
+      "width": 540,
+      "height": 152,
+      "boxes": {
+        "pill": [
+          12,
+          12,
+          516,
+          30
+        ],
+        "row": [
+          21,
+          57,
+          498,
+          34
+        ],
+        "jump": [
+          301,
+          61,
+          61,
+          26
+        ],
+        "approve": [
+          370,
+          61,
+          77,
+          26
+        ],
+        "deny": [
+          455,
+          61,
+          60,
+          26
+        ]
+      },
+      "step": "Waits for a DEMO approval ask in the Christmas world, shoots its badge and the triage pill, opens the badge's pop-out, then the triage list."
+    },
+    "worlds-store-packs": {
+      "file": "worlds-store-packs.webp",
+      "width": 1180,
+      "height": 825,
+      "boxes": {
+        "premium": [
+          112,
+          17,
+          90,
+          29
+        ],
+        "installed": [
+          265,
+          17,
+          97,
+          29
+        ],
+        "packs": [
+          19,
+          132,
+          1132,
+          18
+        ],
+        "patron": [
+          19,
+          185,
+          273,
+          572
+        ],
+        "sponsor": [
+          306,
+          185,
+          273,
+          572
+        ]
+      },
+      "step": "Goes to the store from Worlds > Get more worlds with motion reduced (still posters), blanks the price lines, and shoots the World Packs, the world cards and the Installed tab."
+    },
+    "worlds-store-worlds": {
+      "file": "worlds-store-worlds.webp",
+      "width": 1180,
+      "height": 825,
+      "boxes": {
+        "heading": [
+          19,
+          63,
+          147,
+          18
+        ],
+        "import": [
+          1004,
+          63,
+          147,
+          35
+        ],
+        "installed": [
+          146,
+          646,
+          129,
+          35
+        ],
+        "buy": [
+          452,
+          646,
+          110,
+          35
+        ]
+      },
+      "step": "Goes to the store from Worlds > Get more worlds with motion reduced (still posters), blanks the price lines, and shoots the World Packs, the world cards and the Installed tab."
+    },
+    "worlds-store-installed": {
+      "file": "worlds-store-installed.webp",
+      "width": 1180,
+      "height": 825,
+      "boxes": {
+        "restore": [
+          674,
+          77,
+          153,
+          35
+        ],
+        "card": [
+          306,
+          152,
+          273,
+          406
+        ],
+        "open": [
+          433,
+          507,
+          129,
+          35
+        ]
+      },
+      "step": "Goes to the store from Worlds > Get more worlds with motion reduced (still posters), blanks the price lines, and shoots the World Packs, the world cards and the Installed tab."
+    }
+  }
+}

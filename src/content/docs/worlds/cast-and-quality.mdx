@@ -1,0 +1,127 @@
+---
+title: Cast and quality
+description: Choose the skin and hair of your world's characters, for the whole team or one agent, and set how detailed Visualize draws the scene.
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+The **cast** is the set of characters a world draws for your agents. By default, LUCID gives the team a mixed look: different skin tones, hair and presentation, and each agent keeps its look as others come and go. You can change that for the whole team or for one agent.
+
+**Quality** sets how much detail Visualize draws. It applies to the built-in styles and to every world.
+
+<Aside>
+The cast choices appear only while a world is in use. The built-in **Anime** and **Professional** styles have their own characters and do not use them.
+</Aside>
+
+## Choose the look of the whole team
+
+<Steps>
+
+1. Open Visualize in a world. See [Open Agent Worlds](/worlds/open-agent-worlds/).
+
+2. Click **View** at the top, and scroll down to **Cast**.
+
+   <Shot
+     id="worlds-cast-fleet"
+     alt="The Cast section of the View menu: Balanced fleet and Same for all, a row of ten skin shades from light to deep, Warm, Neutral and Cool, a row of hair colors, and chips for sixteen hair styles from Short to Hijab. Skin, Hair color and Hair style each say Mixed."
+     callouts={[
+       { box: "mode", label: "Balanced fleet mixes the looks. Same for all gives every character the same look." },
+       { box: "skin", label: "Ten skin shades, light to deep." },
+       { box: "undertone", label: "The undertone of the skin shades." },
+       { box: "hair", label: "Hair colors: natural shades, then bright ones." },
+       { box: "style", label: "Hair styles." },
+     ]}
+   />
+
+3. Click a skin shade, a hair color or a hair style. Visualize switches to **Same for all** and redraws every character with your choice.
+
+4. To mix the looks again, click **Balanced fleet**.
+
+</Steps>
+
+The undertone (**Warm**, **Neutral** or **Cool**) applies in both modes.
+
+## Choose the look of one agent
+
+<Steps>
+
+1. Click the agent's figure. Its panel opens beside it.
+
+   <Shot
+     id="worlds-node-panel"
+     alt="A demo agent's panel with its name and role at the top. It has Stop turn, End agent, Kill and Customize look buttons, and a Mini game list below."
+     callouts={[
+       { box: "look", label: "Customize look." },
+       { box: "games", label: "The world's mini games. See Mini games." },
+     ]}
+   />
+
+2. Click **Customize look**. A card titled **Look of**, followed by the agent's name, opens.
+
+   <Shot
+     id="worlds-cast-one"
+     alt="The Look of card for one demo agent: Presentation with Auto, Feminine, Masculine and Neutral, then Skin, with the name of the current shade and an Auto button, the ten skin shades and the undertones."
+     callouts={[
+       { box: "presentation", label: "Presentation: Auto, Feminine, Masculine or Neutral." },
+       { box: "skin", label: "Pick this agent's skin shade." },
+       { box: "auto", label: "Auto lets the team mix decide this one again." },
+     ]}
+   />
+
+3. Pick a presentation, a skin shade, a hair color or a hair style. Only that agent changes. Each row says what the agent wears now.
+
+   <Shot
+     id="worlds-cast-one-reset"
+     alt="The lower part of the Look of card: hair colors, the hair style chips, and a Reset to balanced button."
+     callouts={[
+       { box: "hair", label: "Hair styles. The list follows the chosen presentation." },
+       { box: "reset", label: "Reset to balanced undoes every choice for this agent." },
+     ]}
+   />
+
+</Steps>
+
+The look you pick follows that agent into every world, and LUCID keeps it after a restart. The same goes for the team's look.
+
+## Set the quality
+
+<Steps>
+
+1. Click **View** at the top of Visualize.
+
+2. Under **Quality**, click the button. Each click moves to the next setting, in this order: **Auto**, **Full**, **Reduced**, **Minimal**, **Ultra**, **Cinematic**. LUCID confirms each change with a short notice.
+
+   <Shot
+     id="worlds-view-menu"
+     alt="The View menu. Under Quality, a button reads Auto · ultra (Radeon RX 580 Series)."
+     caption="Auto names the level it chose and the graphics card it found. This picture was taken on a computer with a Radeon RX 580."
+     callouts={[
+       { box: "quality", label: "The Quality button." },
+       { box: "layout", label: "Layout." },
+       { box: "fly", label: "Fly to approvals." },
+     ]}
+   />
+
+</Steps>
+
+What each setting does:
+
+- **Auto** picks for you, from your graphics card, your battery and your processor. A computer with a separate graphics card that is plugged in gets **Ultra**. A computer without real graphics support gets **Minimal**. If the scene cannot keep up, Auto steps down a level and tells you. Auto never picks **Cinematic**.
+- **Cinematic**: everything in Ultra, plus soft shadowing where objects meet and a camera-style blur of what is out of focus. For strong graphics cards.
+- **Ultra**: 12,000 light particles, sharper pixels, smoothed edges, shadows under the figures, and a glow on light worlds too. For computers with a separate graphics card.
+- **Full**: 6,000 particles at up to 60 frames a second, with glass effects and glow.
+- **Reduced**: 2,500 particles at up to 30 frames a second.
+- **Minimal**: 600 particles at up to 20 frames a second, with no lightning.
+
+Pick a fixed level to keep it: Auto is the only setting that steps down on its own.
+
+<Aside type="tip">
+The Knowledge Graph uses the same setting. Changing Quality here changes it there too.
+</Aside>
+
+## Next step
+
+<LinkCard title="Mini games" href="/worlds/mini-games/" description="Play each world's sample games, safely sealed off." />

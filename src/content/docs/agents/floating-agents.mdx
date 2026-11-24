@@ -1,0 +1,129 @@
+---
+title: Floating Agents
+description: Use the small Agent that floats over each message box to see ideas, run one in parallel or ask Lucid about it, and hide or turn it off.
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+A floating Agent is a small copy of an Agent from the right rail, in its folder's color, with its name under it. One floats just above the main message box, one above each card's message box in the [Fleet](/glossary/#fleet), and one beside each agent in Agent Worlds. After an agent finishes a turn, its floating Agent can suggest a few next steps.
+
+## What it tells you
+
+Hover a floating Agent. A note shows its name, what its agent is doing, whether ideas are waiting, and what you can do with it.
+
+<Shot
+  id="agents-buddy-main"
+  alt="The main message box with a small glowing Agent labeled SAMPLE-PLATFORM just above its upper left corner. A note above it says sample-platform, Meditating · idle, 3 ideas ready: click to see them, Drag to move it, double-click to put it back. A small red x sits on the Agent's corner."
+  callouts={[
+    { box: "buddy", label: "The floating Agent of the main chat." },
+    { box: "name", label: "Its Agent's name." },
+    { box: "tip", label: "Hover it to read what it is doing and what it offers." },
+  ]}
+/>
+
+A small number on it shows how many ideas are waiting.
+
+## See its ideas
+
+<Steps>
+
+1. Click the floating Agent.
+
+   If it has ideas, a bubble opens. If not, it asks for some quietly. A short line beside it says **Looking for ideas...**, then either the bubble opens or the line says **Nothing to suggest right now**.
+
+2. Read the ideas. The bubble shows what the agent is doing, then up to three ideas, each with a title and the prompt it would send.
+
+   <Shot
+     id="agents-buddy-ideas"
+     alt="An ideas bubble beside the Docs writer floating Agent in a Fleet card. Its header shows the Agent's name, folder and Writing the release notes. Three ideas follow, such as Add a test for the session id rotation fix, each with Run in parallel worktree and Ask Lucid buttons. New ideas is at the bottom."
+     callouts={[
+       { box: "buddy", label: "The floating Agent you clicked." },
+       { box: "idea", label: "One idea: a title and the prompt it would send." },
+       { box: "run", label: "Run in parallel worktree." },
+       { box: "ask", label: "Ask Lucid about this idea." },
+       { box: "more", label: "New ideas asks again." },
+     ]}
+   />
+
+3. For an idea you like, click one of its buttons:
+
+   - **Run in parallel worktree:** starts a new agent in the Fleet with the idea as its prompt. It works in a worktree, a separate copy of your [repository](/glossary/#repository) on its own branch, so it does not get in the way of the agent that is already working.
+   - **Ask Lucid:** opens Ask Lucid with the idea filled in, so you can ask whether it is worth doing and how.
+
+4. Press **Esc** to close the bubble.
+
+</Steps>
+
+Ideas come from a smaller AI model of the provider you use, and each set of ideas costs a little to make. Before anything is sent, LUCID's security scan checks the agent's recent work. If that work does not pass, no ideas are made and the bubble says so.
+
+## Move it or put it back
+
+- **Drag** the floating Agent anywhere over its area. LUCID remembers the spot.
+- **Double-click** it to put it back in its usual spot.
+
+Move it whenever it covers something you want to read.
+
+## Hide it for this session
+
+The main chat's and each Fleet card's floating Agent can be hidden.
+
+<Steps>
+
+1. Hover the floating Agent. A tiny red **x** appears on its upper right corner.
+
+   <Shot
+     id="agents-buddy-hide"
+     alt="A floating Agent labeled DOCS WRITER with a tiny red x on its upper right corner, under its hover note."
+     callouts={[
+       { box: "brick", label: "The floating Agent." },
+       { box: "x", label: "The red x hides it for this session." },
+     ]}
+   />
+
+2. Click the **x**. The floating Agent goes away, and a note says, for example, **Docs writer is hidden**.
+
+   <Shot
+     id="agents-buddy-hidden"
+     alt="A note titled Docs writer is hidden. It says it stays off this lane's session and comes back with a new one, and that Settings, Appearance, Floating Agents turns them all off. An Undo button is below."
+     callouts={[{ box: "undo", label: "Undo brings it back at once." }]}
+   />
+
+</Steps>
+
+It stays hidden for that conversation, even after LUCID restarts. It comes back with a new one: a new chat in the main window, or a restarted Fleet agent. The floating Agents in Agent Worlds have no **x**.
+
+## Turn floating Agents off
+
+<Steps>
+
+1. Click **Settings**, the bottom icon in the bar on the left.
+
+2. Click **Appearance**.
+
+3. Open the **Floating Agents** card.
+
+4. Clear **Show floating Agents** to hide them all. Check it again to bring them back.
+
+</Steps>
+
+<Shot
+  id="agents-buddy-settings"
+  alt="Settings, Appearance, with the Floating Agents card open. It has two checked boxes, Show floating Agents and Suggest ideas after each turn, and a note that ideas come from a smaller model and cost a little each time."
+  callouts={[
+    { box: "category", label: "Appearance." },
+    { box: "card", label: "The Floating Agents card." },
+    { box: "show", label: "Show floating Agents: on or off for all of them." },
+    { box: "auto", label: "Suggest ideas after each turn." },
+  ]}
+/>
+
+**Suggest ideas after each turn** lets each floating Agent ask for ideas on its own when its agent finishes a turn, at most every 3 minutes per agent. Clear it to get ideas only when you click.
+
+The changes apply at once.
+
+## Next step
+
+<LinkCard title="See what an agent built" href="/agents/see-what-an-agent-built/" description="Open the web page an agent made in the Preview panel." />

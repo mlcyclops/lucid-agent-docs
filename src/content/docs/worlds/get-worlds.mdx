@@ -1,0 +1,140 @@
+---
+title: Get worlds
+description: Buy a world or a World Pack, install it, open it in Visualize, and get it back after an upgrade or a glitch.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+You get worlds from the LUCID store. You can buy one world at a time, or a [World Pack](/glossary/#world-pack) that unlocks many worlds at once. Each is a one-time purchase, and each card shows its price.
+
+You can shop in the app, or on the web at [store.lucid-agents.com](https://store.lucid-agents.com/). Either way, the purchase is kept on the Google account you sign in with, so you can install it on every computer where you sign in.
+
+## Open the store
+
+<Steps>
+
+1. Open Visualize, click **Worlds**, then click **Get more worlds**. Visualize closes and the **Plugins** store opens on its **Premium** tab.
+
+   Two other ways in: the **Plugins** button at the top of the Preview panel, or the command list (**Ctrl+K**, or **⌘K** on a Mac) and **Open Plugins**.
+
+2. The top of the Premium tab lists the World Packs.
+
+   <Shot
+     id="worlds-store-packs"
+     alt="The Plugins store on the Premium tab. Under the heading Lucid Agent World Packs are two cards, Patron Class and Sponsor, each with a collage of world pictures, a short description and a Sign in to buy button."
+     caption="The price line on each card is left out of this picture."
+     callouts={[
+       { box: "premium", label: "The Premium tab." },
+       { box: "packs", label: "Lucid Agent World Packs come first." },
+       { box: "patron", label: "Patron Class: every world live today, plus every world released in the next 3 years." },
+       { box: "sponsor", label: "Sponsor: pick 6 worlds now, and get 6 world credits to spend on any world over the next 3 years." },
+       { box: "installed", label: "The Installed tab lists what is on this computer." },
+     ]}
+   />
+
+3. Scroll down to **Lucid Agent Worlds** to see every world on its own card.
+
+   <Shot
+     id="worlds-store-worlds"
+     alt="The Lucid Agent Worlds section of the store, with cards for Christmas, Valentine's Day, Football and St. Patrick's Day. The installed Christmas card has an Open in Visualize button. The others say Sign in to buy."
+     caption="The price line on each card is left out of this picture."
+     callouts={[
+       { box: "heading", label: "Lucid Agent Worlds." },
+       { box: "installed", label: "An installed world: Open in Visualize." },
+       { box: "buy", label: "A world you do not have yet. The button says Sign in to buy until you sign in, then Buy and the price." },
+       { box: "import", label: "Import world file installs a world file you saved on another computer." },
+     ]}
+   />
+
+</Steps>
+
+## Buy a world
+
+<Steps>
+
+1. On the world's card, click **Sign in to buy** if you see it. LUCID opens a sign-in page in your web browser. Sign in with your Google account, then come back to LUCID. The card now says **Buy**, followed by the price.
+
+2. Click **Buy**. A box shows what you get and a summary of the license.
+
+3. Tick **I accept the LUCID Premium Plugin License**, then click **Continue to checkout**.
+
+4. Checkout opens in your web browser. Pay there, then come back to LUCID.
+
+   The card says **Finish checkout in your browser. The install starts when you come back to LUCID.** When you return, LUCID installs the world.
+
+</Steps>
+
+## Buy a World Pack
+
+A pack installs nothing by itself. It unlocks worlds on your account, and each unlocked world then installs from its own card.
+
+- **Patron Class**: click **Buy**, accept the license and check out. Every world is unlocked.
+- **Sponsor**: click **Buy** and pick exactly 6 worlds. **Continue** turns on when 6 are picked. Then accept the license and check out. Your 6 worlds are unlocked, and you also get world credits. A world you do not own then shows **Use a credit** instead of **Buy**.
+
+After checkout, LUCID says **Unlocked. Install your worlds from their cards.**
+
+## Install a world
+
+<Steps>
+
+1. On an unlocked world's card, click **Install**.
+
+2. LUCID downloads the world and checks it. The card says **Downloading the signed package**, then **Checking the signature, checksums, and security scan**. A world that fails a check is not installed, and LUCID says why.
+
+3. When it is done, LUCID says the world is installed. Click **Open in Visualize** in that notice, or on the card, to see it.
+
+</Steps>
+
+<Aside>
+A world opened from the store can show the built-in style for a moment before the world appears.
+</Aside>
+
+## Keep your worlds
+
+An upgrade of LUCID does not remove your worlds. LUCID also keeps a signed spare copy of every world you install.
+
+Each time LUCID starts, it checks your worlds. If one is missing or damaged, LUCID puts it back from the spare copy, after checking its signature, checksums and security scan again. It then tells you once, for example **Repaired 1 Lucid Agent World after an update**.
+
+If the spare copy cannot fix it, LUCID reinstalls the world from the store, as long as your account owns it. If you are signed out, LUCID asks you to sign in and offers **Sign in** and **Retry**.
+
+You can also run this check yourself:
+
+<Steps>
+
+1. In the store, click the **Installed** tab.
+
+2. Click **Restore purchases**. LUCID checks every world and store plugin on this computer and reinstalls any that is missing or damaged.
+
+   <Shot
+     id="worlds-store-installed"
+     alt="The Installed tab of the store, with a Restore purchases button at the top and three installed worlds: Basketball, Christmas and Soccer, each with Export and Open in Visualize."
+     caption="In the LUCID desktop app, an Install from file button sits at the top right. This picture was taken in a test browser, which says that installing from a file needs the desktop app."
+     callouts={[
+       { box: "restore", label: "Restore purchases checks and repairs your worlds." },
+       { box: "card", label: "An installed world." },
+       { box: "open", label: "Open in Visualize." },
+     ]}
+   />
+
+</Steps>
+
+## Move a world to a computer with no internet
+
+<Steps>
+
+1. On the world's card, click **Export**. LUCID saves the world's signed file.
+
+2. Copy the file to the other computer.
+
+3. There, open Visualize, click **Worlds**, then **Import world file...**, and pick the file. LUCID checks the signature, the contents and the security scan again before it installs it.
+
+</Steps>
+
+The world still needs your purchase to show. A world is also kept usable for a while on a computer that cannot reach the store, so a computer that goes offline keeps working.
+
+## Next step
+
+<LinkCard title="Approve from inside a world" href="/worlds/approvals-in-worlds/" description="Answer an agent's request without leaving the scene." />

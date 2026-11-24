@@ -1,0 +1,106 @@
+---
+title: Approve from inside a world
+description: Answer an agent's request with Approve, Auto or Deny from its badge in Visualize, and keep track of every open request.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, LinkCard } from "@astrojs/starlight/components";
+import Shot from "../../../components/Shot.astro";
+
+An [approval](/glossary/#approval) is your yes or no before an agent does something, such as running a command or reading a file. In Visualize you can answer it right where the agent stands, without going back to the chat or the Fleet.
+
+Your answer goes through the same path, with the same safety rules, as the buttons in the chat and on the Fleet cards. Visualize cannot approve anything those buttons could not.
+
+<Aside>
+The pictures on this page come from LUCID's built-in demo team, so they say **DEMO**. Demo requests are answered inside Visualize only, and no real agent is involved.
+</Aside>
+
+## Spot a request
+
+When an agent asks for approval, a round badge with a shield pulses over it. The badge is amber, or red for riskier requests: a command, a website, a local file opened in the browser, or anything LUCID flags as dangerous.
+
+At the top of the scene, a strip counts the open requests by type and shows how many agents are working, waiting or failed.
+
+<Shot
+  id="worlds-approval-badge"
+  alt="Visualize in the Christmas world. A round badge with a shield floats over one of the elves. At the top, a strip counts the open approvals by type and the agents working, waiting and failed, and says DEMO."
+  callouts={[
+    { box: "badge", label: "This agent is waiting for your approval." },
+    { box: "pill", label: "The count of open requests and of busy agents." },
+  ]}
+/>
+
+## Answer a request
+
+<Steps>
+
+1. Click the badge. A small card opens beside the agent. It names the tool, the agent, and what the agent wants to do.
+
+   <Shot
+     id="worlds-approval-popout"
+     alt="A card beside the agent's badge, marked DEMO. It names the tool and the agent that asks, shows the request in a box, and has three buttons below: Approve, Auto and Deny."
+     callouts={[
+       { box: "badge", label: "The badge you clicked." },
+       { box: "approve", label: "Approve: allow this one request." },
+       { box: "auto", label: "Auto: stop asking. What it does depends on the agent; see below." },
+       { box: "deny", label: "Deny: refuse it. The agent is told it was refused." },
+     ]}
+   />
+
+2. Choose one:
+
+   - **Approve** allows this one request. You can also press **Enter** or **A**.
+   - **Deny** refuses it. You can also press **D**.
+   - **Auto** depends on the agent. For a Fleet agent, it turns on auto-mode for that agent, which lets it run without asking. LUCID first asks you to accept the risk. For Main, it picks the request's own "always allow" choice. When a request has no such choice, **Auto** is not shown.
+
+   Press **Esc** to close the card without answering.
+
+</Steps>
+
+If LUCID cannot carry out your answer, the card says why and nothing changes. For example, an agent running on another computer needs a decision from its controller.
+
+## See every open request
+
+<Steps>
+
+1. Click the strip at the top of the scene. It opens a list with one row per request.
+
+   <Shot
+     id="worlds-approval-strip"
+     alt="The strip at the top of Visualize, opened. It counts the open approvals by type and the agents working, waiting and failed. Below is one row per request, each with the agent's name and Jump, Approve and Deny buttons."
+     callouts={[
+       { box: "pill", label: "Click the strip to open or close the list." },
+       { box: "row", label: "One request: the agent, the tool and how long ago it asked." },
+       { box: "jump", label: "Jump moves the camera to that agent." },
+       { box: "approve", label: "Approve." },
+       { box: "deny", label: "Deny." },
+     ]}
+   />
+
+2. Use **Jump** to see the agent, or answer from the list with **Approve** or **Deny**.
+
+3. When you move away, the list folds back after about 4 seconds.
+
+</Steps>
+
+## Fly to approvals
+
+With **Fly to approvals** on, the camera flies to an agent as soon as it asks. It never takes the keyboard away from what you are typing. It is on until you switch it off.
+
+To switch it off or on, click **View** at the top of Visualize and tick or clear **Fly to approvals**.
+
+<Shot
+  id="worlds-view-menu"
+  alt="The View menu with three sections: Layout with Orbit and Constellation, Quality with a button that reads Auto · ultra (Radeon RX 580 Series), and Approvals with a Fly to approvals checkbox."
+  caption="Fly to approvals is switched off in this picture, so the camera held still while it was taken."
+  callouts={[
+    { box: "layout", label: "Layout." },
+    { box: "quality", label: "Quality." },
+    { box: "fly", label: "Fly to approvals." },
+  ]}
+/>
+
+## Next step
+
+<LinkCard title="Cast and quality" href="/worlds/cast-and-quality/" description="Choose skin and hair for your characters, and how detailed the scene is." />
