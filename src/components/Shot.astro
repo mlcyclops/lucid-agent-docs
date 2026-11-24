@@ -28,31 +28,55 @@ const { id, alt, callouts = [], caption } = Astro.props;
 const entry = shots[id];
 if (!entry) throw new Error(`Shot "${id}" is not in src/shots/*.json. Run the capture script.`);
 if (!alt || !alt.trim()) throw new Error(`Shot "${id}" has no alt text.`);
+// Images are shown about 630 px wide whatever their size, so the badge and gap scale with the image width to look
+// the same on a full-window shot and a small clip.
+const pad = Math.max(3, Math.round(entry.width / 220));
+const r = Math.max(10, Math.round(entry.width / 50));
 const marks = callouts.map((c, i) => {
   const b = entry.boxes[c.box];
   if (!b) throw new Error(`Shot "${id}" has no box "${c.box}". Boxes: ${Object.keys(entry.boxes).join(", ") || "none"}`);
-  return { n: i + 1, x: b[0], y: b[1], w: b[2], h: b[3], label: c.label };
+  // The drawn box sits `pad` outside the element, clamped to the image so an element on the edge keeps its frame.
+  const x0 = Math.max(1, b[0] - pad), y0 = Math.max(1, b[1] - pad);
+  const x1 = Math.min(entry.width - 1, b[0] + b[2] + pad), y1 = Math.min(entry.height - 1, b[1] + b[3] + pad);
+  return { n: i + 1, x: x0, y: y0, w: x1 - x0, h: y1 - y0, label: c.label, cx: 0, cy: 0 };
 });
-const pad = 6;
-const r = Math.max(14, Math.round(entry.width / 90));
+// Each number sits on its box's top-left corner; when that spot is taken by an earlier number (boxes that share an
+// edge or a corner), it walks the box's edges (top, left, right, bottom) until it is clear.
+const clampX = (v: number) => Math.min(entry.width - r - 2, Math.max(r + 2, v));
+const clampY = (v: number) => Math.min(entry.height - r - 2, Math.max(r + 2, v));
+const placed: [number, number][] = [];
+for (const m of marks) {
+  const step = r * 2 + 4;
+  const spots: [number, number][] = [[m.x, m.y]];
+  for (let k = 1; k * step <= m.w; k++) spots.push([m.x + k * step, m.y]);
+  for (let k = 1; k * step <= m.h; k++) spots.push([m.x, m.y + k * step]);
+  for (let k = 0; k * step <= m.h; k++) spots.push([m.x + m.w, m.y + k * step]);
+  for (let k = 1; k * step <= m.w; k++) spots.push([m.x + k * step, m.y + m.h]);
+  // A box too small for its edges to hold a free spot: rings of spots around its top-left corner.
+  for (let ring = 1; ring <= 4; ring++) for (let a = 0; a < 8; a++) spots.push([m.x + Math.cos((a * Math.PI) / 4) * step * ring, m.y + Math.sin((a * Math.PI) / 4) * step * ring]);
+  const free = spots.map(([x, y]) => [clampX(x), clampY(y)] as [number, number])
+    .find(([x, y]) => placed.every(([px, py]) => Math.hypot(px - x, py - y) >= r * 2 + 3));
+  [m.cx, m.cy] = free ?? [clampX(m.x), clampY(m.y)];
+  placed.push([m.cx, m.cy]);
+}
 ---
 
-<figure class="shot">
+<!-- not-content: Starlight's markdown rules give any element after a sibling a 1rem top margin, which pushed the
+     callout layer 16 px below the image it annotates. -->
+<figure class="shot not-content">
   <div class="shot-frame">
     <img src={`/shots/${entry.file}`} width={entry.width} height={entry.height} alt={alt} loading="lazy" decoding="async" />
     {marks.length > 0 && (
       <svg viewBox={`0 0 ${entry.width} ${entry.height}`} aria-hidden="true" focusable="false">
-        {marks.map((m) => {
-          const cx = Math.max(r + 2, m.x - pad);
-          const cy = Math.max(r + 2, m.y - pad);
-          return (
-            <g>
-              <rect class="shot-box" x={m.x - pad} y={m.y - pad} width={m.w + pad * 2} height={m.h + pad * 2} rx="8" />
-              <circle class="shot-dot" cx={cx} cy={cy} r={r} />
-              <text class="shot-num" x={cx} y={cy} dy="0.35em" text-anchor="middle" font-size={r * 1.15}>{m.n}</text>
-            </g>
-          );
-        })}
+        {marks.map((m) => (
+          <rect class="shot-box" x={m.x} y={m.y} width={m.w} height={m.h} rx={pad + 2} vector-effect="non-scaling-stroke" />
+        ))}
+        {marks.map((m) => (
+          <g>
+            <circle class="shot-dot" cx={m.cx} cy={m.cy} r={r} />
+            <text class="shot-num" x={m.cx} y={m.cy} dy="0.35em" text-anchor="middle" font-size={r * 1.15}>{m.n}</text>
+          </g>
+        ))}
       </svg>
     )}
   </div>
