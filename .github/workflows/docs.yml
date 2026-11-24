@@ -24,14 +24,14 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # lastUpdated reads git history
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - name: Build, then check alt text, captions, em dashes, sitemap and shots
         run: bun run check
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: docs-site
           path: dist
@@ -47,8 +47,8 @@ jobs:
       id-token: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           name: docs-site
           path: dist
