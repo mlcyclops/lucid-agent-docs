@@ -1,0 +1,8 @@
+---
+// Starlight's page footer plus the Premium plugins link every TL187 site carries.
+import Default from "@astrojs/starlight/components/Footer.astro";
+import { PLUGINS_URL } from "./links";
+---
+
+<Default />
+<p class="tl-foot">Extend LUCID with <a href={PLUGINS_URL}>Premium plugins</a>.</p>

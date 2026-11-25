@@ -1,0 +1,8 @@
+---
+// Starlight's mobile menu footer with the Premium plugins link on top (the header hides it on phones).
+import Default from "@astrojs/starlight/components/MobileMenuFooter.astro";
+import { PLUGINS_URL } from "./links";
+---
+
+<a class="tl-plugins-m" href={PLUGINS_URL}>Premium plugins</a>
+<Default />

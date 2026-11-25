@@ -14,6 +14,10 @@ bun run check    # build, then fail on missing alt text or captions, em dashes, 
 
 Pages are MDX under `src/content/docs/`. Writing rules: one task per page, plain words, numbered steps, every term defined on first use and linked to the glossary, no em dashes, no prices.
 
+## Look
+
+The site wears the TECHLEAD 187 design system (techlead187.com): its color tokens and type in `src/styles/custom.css`, the aurora, stars and field background in `src/components/Ambient.astro`, the floating nav bar with Theme Music and the Premium plugins link (`https://lucid-agents.com/#plugins`) in `src/components/Header.astro`. The two theme tracks live in `public/audio/` and are byte-identical copies of the techlead187.com files.
+
 ## Screenshots
 
 Never taken by hand. `desktop/scripts/docs_capture_p_docs_1.mjs` in the app repo boots an isolated QA engine (temp home, scripted fake agent, demo data only), drives the real UI in headless Chrome and writes `public/shots/<id>.webp` plus `src/shots/<module>.json` (image size and the named boxes a page annotates) into a checkout of this repo next to it:

@@ -1,0 +1,12 @@
+---
+// Starlight's own page frame with the TL187 ambient background behind it (z-index 0 to 2; .page sits at 3).
+import Default from "@astrojs/starlight/components/PageFrame.astro";
+import Ambient from "./Ambient.astro";
+---
+
+<Ambient />
+<Default>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+  <slot />
+</Default>
