@@ -1,16 +1,199 @@
-/* LUCID brand: magenta and cyan from the app icon (desktop/build/icon.svg). */
+/* TL187 design system (the one look for every LUCID / TECHLEAD 187 site): tokens copied from
+   techlead187.com public/index.html, then mapped onto Starlight's theme variables. */
 :root {
-  --sl-color-accent-low: #2c1233;
-  --sl-color-accent: #c64bd6;
-  --sl-color-accent-high: #f0c4f7;
-  --lucid-cyan: #46c8dc;
+  --bg:#03060b; --bg2:#07101a; --ink:#ecf4fa; --hi:#fff; --dim:#a3b4c3; --faint:#8092a2;
+  --cyan:#3ee8f0; --teal:#00ffd1; --blue:#5b8cff; --violet:#a06bff; --amber:#f6ad55;
+  --line:rgba(255,255,255,.09); --line-s:rgba(255,255,255,.05); --line-hi:rgba(255,255,255,.14);
+  --glass:rgba(255,255,255,.028); --glass-2:rgba(255,255,255,.05); --sunk:rgba(0,0,0,.25);
+  --on-grad:#02121a; --panel:rgba(3,6,11,.45); --foot-bg:rgba(3,6,11,.6);
+  --nav-bg:rgba(6,11,18,.6); --nav-bg-s:rgba(6,11,18,.9); --menu-bg:rgba(6,11,18,.96);
+  --shadow:rgba(0,0,0,.5); --field-line:62,232,240; --field-dot:160,107,255;
+  --mono:ui-monospace,"Cascadia Code","JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  --sans:"Inter","Segoe UI Variable Text","Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Roboto,Arial,sans-serif;
+  --display:"Inter Display","Inter","Segoe UI Variable Display","Segoe UI Variable","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Roboto,Arial,sans-serif;
+  --grad:linear-gradient(100deg,var(--cyan),var(--blue) 55%,var(--violet));
+
+  /* Starlight mapping (dark) */
+  --sl-color-white: var(--hi);
+  --sl-color-gray-1: var(--ink);
+  --sl-color-gray-2: var(--dim);
+  --sl-color-gray-3: var(--faint);
+  --sl-color-gray-4: #4f5f6d;
+  --sl-color-gray-5: #1f2b36;
+  --sl-color-gray-6: var(--bg2);
+  --sl-color-black: var(--bg);
+  --sl-color-accent-low: #062a30;
+  --sl-color-accent: var(--cyan);
+  --sl-color-accent-high: #9ef3f7;
+  --sl-color-bg-nav: var(--nav-bg-s);
+  --sl-color-bg-sidebar: var(--panel);
+  --sl-color-hairline-light: var(--line-hi);
+  --sl-color-hairline: var(--line);
+  --sl-color-hairline-shade: var(--line);
+  --sl-font: var(--sans);
+  --sl-font-mono: var(--mono);
+  --sl-menu-button-size: 2.625rem;
+  /* Room for TL's floating 58px nav pill: 5px above and below on phones, 14px above and 8px below on desktop. */
+  --sl-nav-height: 4.25rem;
+  --lucid-cyan: var(--cyan);
 }
 :root[data-theme="light"] {
-  --sl-color-accent-low: #f4dcf8;
-  --sl-color-accent: #a324b4;
-  --sl-color-accent-high: #4d0f57;
-  --lucid-cyan: #0f7d92;
+  color-scheme: light;
+  --bg:#f4f7fa; --bg2:#e8eef4; --ink:#0b1620; --hi:#000; --dim:#3b4c5c; --faint:#556574;
+  --cyan:#04717e; --teal:#00705c; --blue:#2c58c9; --violet:#6a3fc9; --amber:#a14a07;
+  --line:rgba(11,22,32,.13); --line-s:rgba(11,22,32,.08); --line-hi:rgba(11,22,32,.18);
+  --glass:rgba(255,255,255,.72); --glass-2:rgba(11,22,32,.06); --sunk:rgba(11,22,32,.06);
+  --on-grad:#fff; --panel:rgba(255,255,255,.8); --foot-bg:rgba(232,238,244,.88);
+  --nav-bg:rgba(255,255,255,.72); --nav-bg-s:rgba(255,255,255,.94); --menu-bg:rgba(255,255,255,.98);
+  --shadow:rgba(15,30,50,.14); --field-line:4,113,126; --field-dot:106,63,201;
+
+  /* Starlight mapping (light): Starlight's "white" is the strongest text color */
+  --sl-color-white: var(--ink);
+  --sl-color-gray-1: var(--ink);
+  --sl-color-gray-2: var(--dim);
+  --sl-color-gray-3: var(--faint);
+  --sl-color-gray-4: #8996a3;
+  --sl-color-gray-5: #c9d3dc;
+  --sl-color-gray-6: var(--bg2);
+  --sl-color-gray-7: #eef3f7;
+  --sl-color-black: var(--bg);
+  --sl-color-accent-low: #d3eef1;
+  --sl-color-accent: var(--cyan);
+  --sl-color-accent-high: #034e57;
+  --sl-color-bg-nav: var(--nav-bg-s);
+  --sl-color-bg-sidebar: var(--panel);
+  --sl-color-hairline-light: var(--line-s);
+  --sl-color-hairline-shade: var(--line);
+  --lucid-cyan: var(--cyan);
 }
+@media (min-width: 50em) {
+  :root {
+    --sl-nav-height: 5rem;
+  }
+}
+
+/* Body and text (TL 270-279) */
+body {
+  background: var(--bg);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  overflow-x: hidden;
+}
+::selection { background: rgba(62,232,240,.3); }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+
+/* Ambient layers (TL 280-297, ADR-0036); markup and canvases come from src/components/Ambient.astro */
+#aurora { position: fixed; inset: -20% -10% auto -10%; height: 130vh; z-index: 0; pointer-events: none; filter: blur(70px); opacity: .55; }
+#aurora i { position: absolute; border-radius: 50%; mix-blend-mode: screen; display: block; }
+#aurora .a1 { width: 52vw; height: 52vw; left: -6vw; top: -8vh; background: radial-gradient(circle,rgba(62,232,240,.5),transparent 62%); animation: drift1 26s ease-in-out infinite; }
+#aurora .a2 { width: 46vw; height: 46vw; right: -6vw; top: 2vh; background: radial-gradient(circle,rgba(160,107,255,.55),transparent 62%); animation: drift2 32s ease-in-out infinite; }
+#aurora .a3 { width: 40vw; height: 40vw; left: 32vw; top: 26vh; background: radial-gradient(circle,rgba(91,140,255,.4),transparent 62%); animation: drift3 38s ease-in-out infinite; }
+@keyframes drift1 { 50% { transform: translate(6vw,7vh) scale(1.12); } }
+@keyframes drift2 { 50% { transform: translate(-5vw,9vh) scale(1.1); } }
+@keyframes drift3 { 50% { transform: translate(4vw,-6vh) scale(1.15); } }
+#stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .5; }
+#field { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+.grain { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .045;
+  background-image: radial-gradient(rgba(255,255,255,.5) .5px,transparent .5px); background-size: 3px 3px; }
+:root[data-theme="light"] #aurora { opacity: .28; }
+:root[data-theme="light"] :is(.grain,#stars) { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  #aurora i { animation: none; }
+}
+/* Content sits above the ambient layers and reads on a panel */
+.page { position: relative; z-index: 3; }
+.main-frame main { background: var(--panel); }
+@media (min-width: 50rem) {
+  .sidebar-pane { -webkit-backdrop-filter: blur(16px) saturate(1.3); backdrop-filter: blur(16px) saturate(1.3); }
+}
+
+/* Nav: TL's floating blurred pill bar (TL 299-319). The pill itself is .tl-bar in src/components/Header.astro. */
+.page > .header {
+  background: transparent;
+  border-bottom: 0;
+  padding-block: 5px;
+}
+@media (min-width: 50em) {
+  .page > .header { padding-block: 14px 8px; }
+}
+.sl-menu-button {
+  background: var(--nav-bg-s);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  box-shadow: none;
+  padding: 0.7rem;
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  backdrop-filter: blur(16px) saturate(1.3);
+}
+.sl-menu-button:hover { border-color: var(--violet); }
+/* Phones: the bar runs the full width and the menu button sits inside its right end (1px border + 8px inset),
+   centered on the bar like the search and music buttons. */
+@media (max-width: 49.99em) {
+  :root[data-has-sidebar] .page > .header { padding-inline-end: var(--sl-nav-pad-x); }
+  .sl-menu-button { inset-inline-end: calc(var(--sl-nav-pad-x) + 9px); }
+}
+.site-title span { text-overflow: ellipsis; white-space: nowrap; }
+/* Narrow phones: logo only; the title text stays for screen readers */
+@media (max-width: 420px) {
+  .site-title span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+.site-title { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .01em; color: var(--hi); gap: 10px; }
+.site-title img { height: 36px; filter: drop-shadow(0 0 10px rgba(62,232,240,.35)); }
+site-search button[data-open-modal] {
+  border-radius: 999px;
+  border-color: var(--line);
+  background: var(--glass);
+  color: var(--dim);
+}
+site-search button[data-open-modal]:hover { border-color: var(--violet); color: var(--hi); }
+site-search kbd { font-family: var(--sans); }
+starlight-theme-select select { font-family: var(--sans); }
+
+/* Type (ADR-0037): --display at 700 for titles, never monospace for UI text */
+:is(h1#_top, .hero h1, .sl-markdown-content :is(h1,h2,h3,h4,h5,h6)) {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--sl-color-white);
+}
+:is(h1#_top, .hero h1) { line-height: 1.04; letter-spacing: -.035em; }
+.hero h1 { font-size: clamp(42px,6.6vw,82px); }
+.sl-markdown-content :is(h2,h3) { letter-spacing: -.02em; }
+.sidebar-content .group-label .large { font-family: var(--sans); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 12.5px; color: var(--sl-color-gray-3); }
+.sidebar-content a[aria-current="page"] { background: var(--grad); color: var(--on-grad); }
+/* No pill labels: a badge reads as plain uppercase text */
+.sl-badge { background: none; border: 0; border-radius: 0; padding: 0;
+  font-family: var(--sans); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+
+/* Cards: TL glass */
+.sl-link-card { background: var(--glass); border-color: var(--line); border-radius: 16px; box-shadow: none;
+  transition: border-color .2s, background .2s; }
+.sl-link-card:hover { background: rgba(160,107,255,.08); border-color: var(--violet); }
+.sl-link-card .title { font-family: var(--display); font-weight: 700; }
+
+/* Buttons (TL 362-369): primary = .btn.solid, secondary = .btn.ghost; hero actions use both */
+.sl-link-button {
+  font-family: var(--sans); font-weight: 650; font-size: 14.5px; line-height: 1.2; gap: 9px;
+  padding: 12px 20px; border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
+  transition: transform .16s, box-shadow .16s, background .16s, border-color .16s;
+}
+.sl-link-button svg { width: 17px; height: 17px; }
+.sl-link-button.primary { background: var(--grad); border-color: transparent; color: var(--on-grad); box-shadow: 0 6px 26px rgba(62,232,240,.25); }
+.sl-link-button.primary:hover { color: var(--on-grad); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(62,232,240,.4); }
+:is(.sl-link-button.secondary, .hero .sl-link-button.minimal) { border-color: var(--line); color: var(--ink); background: var(--glass); padding-inline: 20px; }
+:is(.sl-link-button.secondary, .hero .sl-link-button.minimal):hover { border-color: var(--violet); background: rgba(160,107,255,.12); color: var(--ink); }
+.hero .actions { gap: 12px; }
+
+/* Premium plugins entry point: nav link (Header.astro), mobile menu and page footer */
+.tl-navlink { font-size: 14px; color: var(--dim); padding: 8px 10px; white-space: nowrap; border-radius: 999px; text-decoration: none; transition: color .2s, background .2s; }
+.tl-navlink:hover { color: var(--hi); background: var(--glass-2); }
+.tl-plugins-m { display: flex; justify-content: center; margin-top: 1rem; font-family: var(--sans); font-weight: 650; font-size: 14.5px;
+  padding: 12px 20px; border-radius: 999px; background: var(--grad); color: var(--on-grad); text-decoration: none; box-shadow: 0 6px 26px rgba(62,232,240,.25); }
+.tl-plugins-m:hover { color: var(--on-grad); }
+.tl-foot { margin: 1.5rem 0 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+.tl-foot a { color: var(--sl-color-text-accent); }
 
 /* Breadcrumbs */
 .crumbs ol {

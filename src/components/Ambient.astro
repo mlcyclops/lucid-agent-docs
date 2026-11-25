@@ -1,0 +1,81 @@
+---
+// TL187 ambient background (techlead187.com, ADR-0036): CSS aurora plus a twinkling starfield and a
+// constellation field drawn on two canvases. Styles live in src/styles/custom.css.
+---
+
+<div id="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<script>
+  // Stars twinkle in place; points drift, part around the pointer and link to near neighbors.
+  // Colors come from the theme tokens; the tab hidden pauses it; reduced motion gets one still frame.
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const sc = document.getElementById("stars") as HTMLCanvasElement;
+  const fc = document.getElementById("field") as HTMLCanvasElement;
+  const sx = sc.getContext("2d")!;
+  const fx = fc.getContext("2d")!;
+  type Star = { x: number; y: number; r: number; p: number };
+  type Pt = { x: number; y: number; vx: number; vy: number };
+  let dpr = 1, stars: Star[] = [], pts: Pt[] = [], lineRGB = "", dotRGB = "", running = false, raf = 0;
+  const mouse = { x: -1e4, y: -1e4 };
+
+  function seed() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    [sc, fc].forEach((c) => { c.width = innerWidth * dpr; c.height = innerHeight * dpr; });
+    stars = []; pts = [];
+    for (let i = 0; i < 120; i++) stars.push({ x: Math.random() * sc.width, y: Math.random() * sc.height, r: (Math.random() * 1.1 + .2) * dpr, p: Math.random() * 6.28 });
+    const n = Math.min(70, Math.floor(innerWidth / 18));
+    for (let j = 0; j < n; j++) pts.push({ x: Math.random() * fc.width, y: Math.random() * fc.height, vx: (Math.random() - .5) * .25 * dpr, vy: (Math.random() - .5) * .25 * dpr });
+  }
+
+  function frame(ts: number) {
+    const t = ts * .001, R = 140 * dpr, L = 120 * dpr;
+    sx.clearRect(0, 0, sc.width, sc.height);
+    sx.fillStyle = "#bcd";
+    for (const s of stars) {
+      sx.globalAlpha = Math.max(0, .3 + .5 * Math.sin(t * .7 + s.p));
+      sx.beginPath(); sx.arc(s.x, s.y, s.r, 0, 6.283); sx.fill();
+    }
+    sx.globalAlpha = 1;
+    if (running) for (const p of pts) {
+      const dx = p.x - mouse.x, dy = p.y - mouse.y, dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < R && dist > 0) { const f = (R - dist) / R * 1.6; p.vx += dx / dist * f; p.vy += dy / dist * f; }
+      p.vx *= .97; p.vy *= .97; p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > fc.width) p.vx *= -1;
+      if (p.y < 0 || p.y > fc.height) p.vy *= -1;
+      p.x = Math.max(0, Math.min(fc.width, p.x)); p.y = Math.max(0, Math.min(fc.height, p.y));
+    }
+    fx.clearRect(0, 0, fc.width, fc.height);
+    fx.strokeStyle = "rgb(" + lineRGB + ")"; fx.lineWidth = .6 * dpr;
+    for (let i = 0; i < pts.length; i++) for (let k = i + 1; k < pts.length; k++) {
+      const a = pts[i], b = pts[k], ex = a.x - b.x, ey = a.y - b.y, d = Math.sqrt(ex * ex + ey * ey);
+      if (d < L) { fx.globalAlpha = (1 - d / L) * .5; fx.beginPath(); fx.moveTo(a.x, a.y); fx.lineTo(b.x, b.y); fx.stroke(); }
+    }
+    fx.globalAlpha = 1; fx.fillStyle = "rgba(" + dotRGB + ",.8)";
+    for (const p of pts) { fx.beginPath(); fx.arc(p.x, p.y, 1.4 * dpr, 0, 6.283); fx.fill(); }
+    if (running) raf = requestAnimationFrame(frame);
+  }
+
+  function fieldColors() {
+    const rs = getComputedStyle(document.documentElement);
+    lineRGB = rs.getPropertyValue("--field-line").trim(); dotRGB = rs.getPropertyValue("--field-dot").trim();
+    if (!running) frame(0);
+  }
+  function fieldStart() { if (!running && !reduce && !document.hidden) { running = true; raf = requestAnimationFrame(frame); } }
+
+  addEventListener("pointermove", (e) => { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; }, { passive: true });
+  document.addEventListener("pointerleave", () => { mouse.x = mouse.y = -1e4; });
+  let rt = 0;
+  addEventListener("resize", () => { clearTimeout(rt); rt = window.setTimeout(() => { seed(); if (!running) frame(0); }, 150); });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { running = false; cancelAnimationFrame(raf); } else fieldStart();
+  });
+  // Starlight's theme select flips data-theme on <html>; the field follows the new tokens.
+  new MutationObserver(fieldColors).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  seed();
+  fieldColors();
+  fieldStart();
+</script>

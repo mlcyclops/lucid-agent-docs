@@ -23,6 +23,10 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       components: {
         PageTitle: "./src/components/PageTitle.astro",
+        PageFrame: "./src/components/PageFrame.astro",
+        Header: "./src/components/Header.astro",
+        MobileMenuFooter: "./src/components/MobileMenuFooter.astro",
+        Footer: "./src/components/Footer.astro",
       },
       sidebar: [
         { label: "Get started", items: [{ autogenerate: { directory: "get-started" } }] },
